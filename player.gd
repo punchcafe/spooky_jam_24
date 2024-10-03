@@ -17,31 +17,25 @@ func delta_from_vec3(vec3: Vector3) -> float:
 	return birdseye_vector.angle()
 	
 func vec3_from_delta(delta: float) -> Vector3:
-	var birdseye_vector := Vector2.from_angle(delta)
-	var side_ratios = birdseye_vector.x / birdseye_vector.y
-	var y = sqrt(RADIUS_SQUARED / (1 + pow(side_ratios, 2)))
-	var x = sqrt(RADIUS_SQUARED - pow(y, 2))
-	return Vector3(x, get_position().y, y)
+	var birdseye_vector := Vector2(RADIUS, 0).rotated(delta)
+	return Vector3(birdseye_vector.x, get_position().y, birdseye_vector.y)
 
 func theta_change(delta: float):
 	if Input.is_action_pressed("ui_right"):
-		return -3 * delta
+		return -0.5 * delta
 	elif Input.is_action_pressed("ui_left"):
-		return 3 * delta
+		return 0.5 * delta
 	else:
 		return 0.0
 	
 
 func _physics_process(delta: float) -> void:
 	var new_position = vec3_from_delta(current_delta() + theta_change(delta))
-	if is_equal_approx(theta_change(delta), 0.0):
-		velocity.x = 0.0
-		velocity.z = 0.0
-	else:
-		var difference = get_position().direction_to(new_position)
-		var new_velocity = difference * 5 # Do this so that it moves the entire way in the delta
-		velocity.x = new_velocity.x
-		velocity.z = new_velocity.z
+
+	var difference =  new_position - get_position()
+	var new_velocity = difference / delta # Do this so that it moves the entire way in the delta
+	velocity.x = new_velocity.x
+	velocity.z = new_velocity.z
 
 	# Add the gravity.
 	if not is_on_floor():

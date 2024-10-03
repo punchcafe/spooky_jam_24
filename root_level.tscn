@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bi010r54j6p82"]
+[gd_scene load_steps=11 format=3 uid="uid://bi010r54j6p82"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_rwbck"]
 
@@ -32,6 +32,12 @@ size = Vector3(1, 0.2, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_snnr2"]
 size = Vector3(1, 0.2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aphm3"]
+size = Vector3(1, 0.2, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5200a"]
+size = Vector3(1, 0.2, 5)
 
 [node name="Origin" type="Node3D"]
 
@@ -87,3 +93,12 @@ shape = SubResource("BoxShape3D_ch8aw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ring/StaticBody3D7"]
 mesh = SubResource("BoxMesh_snnr2")
+
+[node name="StaticBody3D8" type="StaticBody3D" parent="Ring"]
+transform = Transform3D(-0.768328, 0.247624, 0.590215, 0.0179309, 0.930096, -0.366879, -0.639805, -0.2713, -0.719059, 6.92231, 0.93415, 6.16473)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ring/StaticBody3D8"]
+shape = SubResource("BoxShape3D_aphm3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ring/StaticBody3D8"]
+mesh = SubResource("BoxMesh_5200a")
