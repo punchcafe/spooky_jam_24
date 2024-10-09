@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://bi010r54j6p82"]
+[gd_scene load_steps=11 format=3 uid="uid://bi010r54j6p82"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_rwbck"]
 [ext_resource type="Script" path="res://mist.gd" id="2_kyo8u"]
+[ext_resource type="PackedScene" uid="uid://dy0qjs0n5tht4" path="res://platform_segment_simple.tscn" id="3_p45ck"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_dbesh"]
 
@@ -27,18 +28,6 @@ fog_height = 679.07
 volumetric_fog_density = 1.0
 volumetric_fog_emission_energy = 405.21
 volumetric_fog_ambient_inject = 1.57
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ch8aw"]
-size = Vector3(1, 0.2, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_snnr2"]
-size = Vector3(1, 0.2, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_aphm3"]
-size = Vector3(1, 0.2, 5)
-
-[sub_resource type="BoxMesh" id="BoxMesh_5200a"]
-size = Vector3(1, 0.2, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o1imb"]
 size = Vector3(20, 20, 20)
@@ -85,59 +74,52 @@ light_color = Color(1, 0.570035, 0.685655, 1)
 
 [node name="Ring" type="Node3D" parent="."]
 
-[node name="StaticBody3D4" type="StaticBody3D" parent="Ring"]
-transform = Transform3D(-0.979998, 0, 0.199009, 0, 1, 0, -0.199009, 0, -0.979998, 8.91628, 0.690594, 3.03414)
+[node name="Path" type="Node3D" parent="Ring"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ring/StaticBody3D4"]
-shape = SubResource("BoxShape3D_ch8aw")
+[node name="StaticBody3D7" parent="Ring/Path" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984808, 0, 0.43, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ring/StaticBody3D4"]
-mesh = SubResource("BoxMesh_snnr2")
+[node name="StaticBody3D8" parent="Ring/Path" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 0, 0.43, 0)
 
-[node name="StaticBody3D7" type="StaticBody3D" parent="Ring"]
-transform = Transform3D(-0.916279, 0, 0.400541, 0, 1, 0, -0.400541, 0, -0.916279, 8.63813, 1.14769, 4.38562)
+[node name="StaticBody3D9" parent="Ring/Path" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 0.43, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ring/StaticBody3D7"]
-shape = SubResource("BoxShape3D_ch8aw")
+[node name="Path2" type="Node3D" parent="Ring"]
+transform = Transform3D(0.875465, 0, -0.483282, 0, 1, 0, 0.483282, 0, 0.875465, 0, 1.14, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ring/StaticBody3D7"]
-mesh = SubResource("BoxMesh_snnr2")
+[node name="StaticBody3D7" parent="Ring/Path2" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984808, 0, 0.43, 0)
 
-[node name="StaticBody3D8" type="StaticBody3D" parent="Ring"]
-transform = Transform3D(-0.904422, 0.171525, 0.390641, 0.0179309, 0.930096, -0.366879, -0.426263, -0.324808, -0.844275, 7.37951, 0.734013, 4.80347)
+[node name="StaticBody3D8" parent="Ring/Path2" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 0, 0.43, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ring/StaticBody3D8"]
-shape = SubResource("BoxShape3D_aphm3")
+[node name="StaticBody3D9" parent="Ring/Path2" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 0.43, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ring/StaticBody3D8"]
-mesh = SubResource("BoxMesh_5200a")
+[node name="Path3" type="Node3D" parent="Ring"]
+transform = Transform3D(0.255446, 0, -0.966823, 0, 1, 0, 0.966823, 0, 0.255446, 0, 1.14, 0)
 
-[node name="StaticBody3D9" type="StaticBody3D" parent="Ring"]
-transform = Transform3D(-0.194563, 0.363169, 0.911182, 0.0179309, 0.930096, -0.366879, -0.980726, -0.0550429, -0.187475, 2.96269, 3.1086, 8.58052)
+[node name="StaticBody3D7" parent="Ring/Path3" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984808, 0, 0.43, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ring/StaticBody3D9"]
-shape = SubResource("BoxShape3D_aphm3")
+[node name="StaticBody3D8" parent="Ring/Path3" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 0, 0.43, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ring/StaticBody3D9"]
-mesh = SubResource("BoxMesh_5200a")
+[node name="StaticBody3D9" parent="Ring/Path3" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 0.43, 0)
 
-[node name="StaticBody3D10" type="StaticBody3D" parent="Ring"]
-transform = Transform3D(0.325842, -0.0303924, 0.944936, 0.0123092, 0.999535, 0.0279034, -0.945344, 0.00253902, 0.326064, -3.05135, 3.1086, 8.79701)
+[node name="Path4" type="Node3D" parent="Ring"]
+transform = Transform3D(-0.409923, 0, -0.91212, 0, 1, 0, 0.91212, 0, -0.409923, 0, 2.06, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ring/StaticBody3D10"]
-shape = SubResource("BoxShape3D_aphm3")
+[node name="StaticBody3D7" parent="Ring/Path4" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984808, 0, 0.43, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ring/StaticBody3D10"]
-mesh = SubResource("BoxMesh_5200a")
+[node name="StaticBody3D8" parent="Ring/Path4" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 0, 0.43, 0)
 
-[node name="StaticBody3D11" type="StaticBody3D" parent="Ring"]
-transform = Transform3D(0.905234, -0.0229927, 0.424291, 0.0123092, 0.999535, 0.0279034, -0.424735, -0.020037, 0.905096, -7.99862, 2.94373, 4.61551)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ring/StaticBody3D11"]
-shape = SubResource("BoxShape3D_aphm3")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ring/StaticBody3D11"]
-mesh = SubResource("BoxMesh_5200a")
+[node name="StaticBody3D9" parent="Ring/Path4" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 0.43, 0)
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -23.4177, 0)
