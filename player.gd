@@ -10,15 +10,7 @@ var theta := 0.0
 var double_jumped = false
 
 func current_delta():
-	return delta_from_vec3(get_position())
-
-func delta_from_vec3(vec3: Vector3) -> float:
-	var birdseye_vector := Vector2(vec3.x, vec3.z)
-	return birdseye_vector.angle()
-	
-func vec3_from_delta(delta: float) -> Vector3:
-	var birdseye_vector := Vector2(RADIUS, 0).rotated(delta)
-	return Vector3(birdseye_vector.x, get_position().y, birdseye_vector.y)
+	return AngularMotionUtils.rotation_from_vec3(get_position())
 
 func theta_change(delta: float):
 	if Input.is_action_pressed("ui_right"):
@@ -30,9 +22,7 @@ func theta_change(delta: float):
 	
 
 func _physics_process(delta: float) -> void:
-	var new_position = vec3_from_delta(current_delta() + theta_change(delta))
-
-	var difference =  new_position - get_position()
+	var difference =  AngularMotionUtils.angular_displacement_as_vec3(current_delta(), theta_change(delta))
 	var new_velocity = difference / delta # Do this so that it moves the entire way in the delta
 	velocity.x = new_velocity.x
 	velocity.z = new_velocity.z
