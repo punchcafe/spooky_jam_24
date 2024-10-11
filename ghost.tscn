@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://oo3c0v3ygmv0"]
+
+[ext_resource type="Script" path="res://ghost.gd" id="1_k2ntb"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_hxokx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ma76x"]
+radius = 6.82411
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kcbnn"]
+radius = 0.146237
+
+[node name="Ghost" type="Node3D"]
+script = ExtResource("1_k2ntb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = SubResource("SphereMesh_hxokx")
+
+[node name="awaken_zone" type="Area3D" parent="."]
+
+[node name="awaken_zone" type="CollisionShape3D" parent="awaken_zone"]
+shape = SubResource("SphereShape3D_ma76x")
+
+[node name="body_zone" type="Area3D" parent="."]
+
+[node name="body_zone" type="CollisionShape3D" parent="body_zone"]
+shape = SubResource("SphereShape3D_kcbnn")
+
+[connection signal="body_entered" from="awaken_zone" to="." method="_on_awaken_zone_body_entered"]
+[connection signal="body_entered" from="body_zone" to="." method="_on_body_zone_body_entered"]

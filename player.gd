@@ -12,6 +12,10 @@ var double_jumped = false
 func current_delta():
 	return AngularMotionUtils.rotation_from_vec3(get_position())
 
+# Current junk function because instance of isn't seeming to pick up Player over CharacterBody3D
+func player_character():
+	pass
+
 func theta_change(delta: float):
 	if Input.is_action_pressed("ui_right"):
 		return -0.5 * delta
@@ -22,7 +26,7 @@ func theta_change(delta: float):
 	
 
 func _physics_process(delta: float) -> void:
-	var difference =  AngularMotionUtils.angular_displacement_as_vec3(current_delta(), theta_change(delta))
+	var difference =  AngularMotionUtils.angular_displacement_as_vec3(current_delta(), theta_change(delta), RADIUS)
 	var new_velocity = difference / delta # Do this so that it moves the entire way in the delta
 	velocity.x = new_velocity.x
 	velocity.z = new_velocity.z
