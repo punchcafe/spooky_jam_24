@@ -10,5 +10,4 @@ func _process(_delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if is_instance_of(body, Player):
-		get_tree().reload_current_scene()
-	pass
+		(body as Player).die()

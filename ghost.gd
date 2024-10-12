@@ -48,4 +48,4 @@ func is_player(object: Object) -> bool:
 
 func _on_body_zone_body_entered(body: Node3D) -> void:
 	if is_player(body):
-		get_tree().reload_current_scene()
+		(body as Player).die()

@@ -15,6 +15,9 @@ func current_delta():
 # Current junk function because instance of isn't seeming to pick up Player over CharacterBody3D
 func player_character():
 	pass
+	
+func die():
+	get_tree().reload_current_scene()
 
 func theta_change(delta: float):
 	if Input.is_action_pressed("ui_right"):
