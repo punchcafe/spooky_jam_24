@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bi010r54j6p82"]
+[gd_scene load_steps=11 format=3 uid="uid://bi010r54j6p82"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_rwbck"]
 [ext_resource type="Script" path="res://mist.gd" id="2_kyo8u"]
 [ext_resource type="PackedScene" uid="uid://dy0qjs0n5tht4" path="res://platform_segment_simple.tscn" id="3_p45ck"]
 [ext_resource type="PackedScene" uid="uid://oo3c0v3ygmv0" path="res://ghost.tscn" id="4_ob6w3"]
+[ext_resource type="PackedScene" uid="uid://b6wxrdseugf7c" path="res://crumble_platform.tscn" id="5_esrli"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w6dwc"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -264,5 +265,8 @@ transform = Transform3D(-0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, -0.939693, 
 
 [node name="StaticBody3D15" parent="Half Ring2" instance=ExtResource("3_p45ck")]
 transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808, 0, 0.43, 0)
+
+[node name="Node3D" parent="." instance=ExtResource("5_esrli")]
+transform = Transform3D(0.990024, 0, -0.140901, 0, 1, 0, 0.140901, 0, 0.990024, 0, 0.81, 0)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
