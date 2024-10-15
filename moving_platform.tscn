@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://pcp3ity8cgit"]
+
+[ext_resource type="Script" path="res://moving_platform.gd" id="1_ltn1n"]
+
+[node name="StaticBody3D7" type="AnimatableBody3D"]
+transform = Transform3D(0.99998, 0, 0, 0, 1, 0, 0, 0, 0.99998, 0, 0, 7)
+script = ExtResource("1_ltn1n")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(-0.0437822, 0, -0.998962, 0, 1, 0, 0.998962, 0, -0.0437822, 0, 0, 0)

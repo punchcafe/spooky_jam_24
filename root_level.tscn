@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bi010r54j6p82"]
+[gd_scene load_steps=12 format=3 uid="uid://bi010r54j6p82"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_rwbck"]
 [ext_resource type="Script" path="res://mist.gd" id="2_kyo8u"]
 [ext_resource type="PackedScene" uid="uid://dy0qjs0n5tht4" path="res://platform_segment_simple.tscn" id="3_p45ck"]
 [ext_resource type="PackedScene" uid="uid://oo3c0v3ygmv0" path="res://ghost.tscn" id="4_ob6w3"]
 [ext_resource type="PackedScene" uid="uid://b6wxrdseugf7c" path="res://crumble_platform.tscn" id="5_esrli"]
+[ext_resource type="PackedScene" uid="uid://pcp3ity8cgit" path="res://moving_platform.tscn" id="6_2w3qf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w6dwc"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -267,6 +268,9 @@ transform = Transform3D(-0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, -0.939693, 
 transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808, 0, 0.43, 0)
 
 [node name="Node3D" parent="." instance=ExtResource("5_esrli")]
-transform = Transform3D(0.990024, 0, -0.140901, 0, 1, 0, 0.140901, 0, 0.990024, 0, 0.81, 0)
+transform = Transform3D(0.93892, 0, 0.344135, 0, 1, 0, -0.344135, 0, 0.93892, 0, 0.81, 0)
+
+[node name="Node3D2" parent="." instance=ExtResource("6_2w3qf")]
+transform = Transform3D(0.998393, 0, 0.0561675, 0, 1, 0, -0.0561675, 0, 0.998393, 6.98875, 3.12404, -0.393179)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
