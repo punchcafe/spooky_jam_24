@@ -1,5 +1,5 @@
 @tool
-extends StaticBody3D
+extends AnimatableBody3D
 class_name CrumblePlatform
 
 const r1 := 7.0

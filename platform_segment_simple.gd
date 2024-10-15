@@ -1,5 +1,5 @@
 @tool
-extends StaticBody3D
+extends AnimatableBody3D
 
 const r1 := 7.0
 const r2 := 10.0
