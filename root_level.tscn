@@ -271,6 +271,8 @@ transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808
 transform = Transform3D(0.93892, 0, 0.344135, 0, 1, 0, -0.344135, 0, 0.93892, 0, 0.81, 0)
 
 [node name="Node3D2" parent="." instance=ExtResource("6_2w3qf")]
-transform = Transform3D(0.998393, 0, 0.0561675, 0, 1, 0, -0.0561675, 0, 0.998393, 6.98875, 3.12404, -0.393179)
+transform = Transform3D(0.993694, 0, 0.111876, 0, 1, 0, -0.111876, 0, 0.993694, 6.90892, 1.74292, -0.774847)
+angle_change = -0.5
+vertical_change = 2.0
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
