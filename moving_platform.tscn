@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://moving_platform.gd" id="1_ltn1n"]
 
 [node name="StaticBody3D7" type="AnimatableBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
 script = ExtResource("1_ltn1n")
-angle_change = 0
+initial_y = 1
+angle_change = 0.0
 speed = 0.0
-show_end_position = null
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(-0.0437822, 0, -0.998962, 0, 1, 0, 0.998962, 0, -0.0437822, 0, 0, 0)

@@ -14,7 +14,7 @@ const radial_length := r2 - r1
 const tangent_width := r1 * (sin(segment_angle))
 
 @export var initial_rotation_deg := 0.0
-@export var initial_y := 1
+@export var initial_y := 1.0
 @export var angle_change := 10.0
 @export var speed := 10.0
 @export var vertical_change := 0.0
@@ -74,9 +74,6 @@ func _process(delta: float) -> void:
 	if(new_weight <= 0 or new_weight >= 1):
 		self._interpolation_weight_change_sign *= -1.0
 	else:
-		print("update val")
-		print("new_weight")
-		print(new_weight)
 		self._interpolation_weight_accumulator = new_weight
 		
 func _destination_transform(initial_transform: Transform3D) -> Transform3D:
