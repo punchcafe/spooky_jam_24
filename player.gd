@@ -13,6 +13,7 @@ func current_delta():
 	return AngularMotionUtils.rotation_from_vec3(get_position())
 
 # Current junk function because instance of isn't seeming to pick up Player over CharacterBody3D
+# Pretty sure worked out the issue, TODO to simplify this and apply it to crumble too
 func player_character():
 	pass
 	
@@ -49,6 +50,17 @@ func _physics_process(delta: float) -> void:
 			_double_jump()
 
 	move_and_slide()
+	# This attempts to ensure that stray physics doesn't knock
+	# the player off the circumference.
+	move_and_collide(_restorative_distance())
+
+func _restorative_distance() -> Vector3:
+	var ideal_position = Vector3(RADIUS, position.y, 0).rotated(Vector3(0, 1, 0), current_delta() * -1)
+	var difference = position - ideal_position
+	if difference.length() < 0.1:
+		return Vector3()
+	else:
+		return difference * -1
 
 func _jump():
 	velocity.y = JUMP_VELOCITY
