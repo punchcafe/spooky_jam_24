@@ -22,6 +22,7 @@ func _ready() -> void:
 func _create_wing(polarity):
 	var anchor = Node3D.new()
 	anchor.translate(Vector3(0, 0, (tangent_width / 2) * polarity))
+	## TODO: fix so so wings actually have colission
 	anchor.rotate(Vector3(0, 1, 0), -1 * half_segment_angle * polarity)
 	add_box_child(anchor)
 	anchor.get_child(0).translate(Vector3(0, 0, polarity * tangent_width / -2))

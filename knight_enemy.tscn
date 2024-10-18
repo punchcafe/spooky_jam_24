@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://vsotnunxg7b7"]
+
+[ext_resource type="Script" path="res://knight_enemy.gd" id="1_puw6w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w6dwc"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fxr3r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ry2q0"]
+size = Vector3(0.5, 0.2, 0.5)
+
+[node name="KnightEnemy" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0.962744, 0)
+script = ExtResource("1_puw6w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_w6dwc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_fxr3r")
+
+[node name="LHSFallArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LHSFallArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.351, -0.832453)
+shape = SubResource("BoxShape3D_ry2q0")
+
+[node name="RHSFallArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RHSFallArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.350622, 0.782)
+shape = SubResource("BoxShape3D_ry2q0")
+
+[node name="Node3D" type="Node3D" parent="."]
