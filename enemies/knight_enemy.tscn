@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://vsotnunxg7b7"]
+[gd_scene load_steps=6 format=3 uid="uid://vsotnunxg7b7"]
 
 [ext_resource type="Script" path="res://enemies/knight_enemy.gd" id="1_puw6w"]
 
@@ -9,6 +9,9 @@ size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ry2q0"]
 size = Vector3(0.5, 0.2, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cy8sb"]
+size = Vector3(0.6, 0.6, 0.6)
 
 [node name="KnightEnemy" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 1, 0)
@@ -34,3 +37,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.350622, 0.782)
 shape = SubResource("BoxShape3D_ry2q0")
 
 [node name="Node3D" type="Node3D" parent="."]
+
+[node name="KillZone" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0555327, 0)
+shape = SubResource("BoxShape3D_cy8sb")
+
+[connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]

@@ -70,6 +70,8 @@ func _initial_transform():
 		starting_height
 		)
 	
-
 func _in_editor_updates():
 	self.transform = _initial_transform()
+
+func _on_kill_zone_body_entered(body: Node3D) -> void:
+	PlayerReactions.kill_if_player(body)
