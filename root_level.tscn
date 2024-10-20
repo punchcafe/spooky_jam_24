@@ -257,6 +257,8 @@ initial_y = 2.5
 vertical_change = 3.0
 
 [node name="KnightEnemy" parent="." instance=ExtResource("7_r8l1n")]
-transform = Transform3D(0.686897, 0, -0.726755, 0, 1, 0, 0.726755, 0, 0.686897, 6.59124, 2.08035, 6.23614)
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 4.75, 2, 8.22724)
+starting_rotation_degrees = 300.0
+starting_height = 2.0
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

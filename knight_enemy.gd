@@ -1,3 +1,4 @@
+@tool
 extends CharacterBody3D
 class_name KnightEnemy
 
@@ -8,6 +9,12 @@ const RADIUS_SQUARED = RADIUS ** 2
 
 var theta := 0.0
 var _direction := -1
+
+@export var starting_rotation_degrees := 0.0
+@export var starting_height := 1.0
+
+func _ready():
+	self.transform = _initial_transform()
 
 func current_delta():
 	return AngularMotionUtils.rotation_from_vec3(get_position())
@@ -52,5 +59,17 @@ func _restorative_distance() -> Vector3:
 		return difference * -1
 	
 func _process(delta: float) -> void:
-	#pass
+	if Engine.is_editor_hint():
+		_in_editor_updates()
+		return
 	rotation = Vector3(0, -1 * current_delta(), 0)
+	
+func _initial_transform():
+	return AngularMotionUtils.initial_transformation(
+		deg_to_rad(starting_rotation_degrees), 
+		starting_height
+		)
+	
+
+func _in_editor_updates():
+	self.transform = _initial_transform()

@@ -22,3 +22,8 @@ static func vec3_from_rotation(rotation: float, radius: float) -> Vector3:
 static func angular_displacement_as_vec3(original_rotation, displacement_rotation, radius):
 	var new_position = vec3_from_rotation(original_rotation + displacement_rotation, radius)
 	return new_position - vec3_from_rotation(original_rotation, radius)
+	
+static func initial_transformation(rotation_rads: float, height: float) -> Transform3D:
+	return Transform3D()\
+	.translated(Vector3(RADIUS, height, 0))\
+	.rotated(Vector3(0, 1, 0), rotation_rads)

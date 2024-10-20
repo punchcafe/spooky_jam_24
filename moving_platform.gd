@@ -80,6 +80,7 @@ func _destination_transform(initial_transform: Transform3D) -> Transform3D:
 	return _from_transform.rotated(Vector3(0, 1, 0), deg_to_rad(self.angle_change)).translated(Vector3(0., self.vertical_change, 0.))
 
 func _starting_transform() -> Transform3D:
+	# TODO: extract into utils
 	var inital_transform = Transform3D()
 	return inital_transform.translated(Vector3(7.0, 0, 0)).rotated(Vector3(0,1,0), deg_to_rad(self.initial_rotation_deg)).translated(Vector3(0, self.initial_y, 0))
 
