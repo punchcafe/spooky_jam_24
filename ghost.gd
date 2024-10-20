@@ -39,13 +39,8 @@ func _begin_hunt(player: Player):
 	self._player = player
 
 func _on_awaken_zone_body_entered(body: Node3D) -> void:
-	if is_player(body):
+	if PlayerReactions.is_player(body):
 		_begin_hunt(body as Player)
 
-func is_player(object: Object) -> bool:
-	# This is bad, needs changing
-	return object.has_method("player_character")
-
 func _on_body_zone_body_entered(body: Node3D) -> void:
-	if is_player(body):
-		(body as Player).die()
+	PlayerReactions.kill_if_player(body)

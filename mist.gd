@@ -9,5 +9,4 @@ func _process(_delta: float) -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if is_instance_of(body, Player):
-		(body as Player).die()
+	PlayerReactions.kill_if_player(body)

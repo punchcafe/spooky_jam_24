@@ -53,10 +53,9 @@ func add_box_child(node: Node):
 	node.add_child(collision_shape)
 	collision_shape.translate(Vector3(radial_length / 2, 0, 0))
 
-func _body_entered_crumble_zone(body):
-	## TODO: add check for player here by extracting player check function
-	## perhaps a cast_if_player which returns null if not
-	self._is_crumbling = true
+func _body_entered_crumble_zone(body: Node):
+	if PlayerReactions.is_player(body):
+		self._is_crumbling = true
 
 func create_box_shape() -> BoxShape3D:
 	var box_shape = BoxShape3D.new()
