@@ -1,12 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://pcp3ity8cgit"]
+[gd_scene load_steps=3 format=3 uid="uid://pcp3ity8cgit"]
 
 [ext_resource type="Script" path="res://moving_platform.gd" id="1_ltn1n"]
+[ext_resource type="Script" path="res://moving_platform_proxy.gd" id="1_s1f2q"]
 
-[node name="StaticBody3D7" type="AnimatableBody3D"]
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(0.999921, 0, 0, 0, 1, 0, 0, 0, 0.999921, 0, 0, 0)
+script = ExtResource("1_s1f2q")
+
+[node name="MovingPlatform" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 0)
 script = ExtResource("1_ltn1n")
 angle_change = 0.0
 speed = 0.0
-
-[node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(-0.0437822, 0, -0.998962, 0, 1, 0, 0.998962, 0, -0.0437822, 0, 0, 0)
