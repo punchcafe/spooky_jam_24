@@ -26,7 +26,6 @@ func _rotation_between_ghost_and_player():
 	if abs(difference) > PI:
 		# Why the hell does this work
 		difference =  sign(difference * -1)*(PI - abs(fmod(difference, PI)))
-	print(difference)
 	return difference
 
 func _clamped_vertical_difference():

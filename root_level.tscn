@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://biaidqh46uhsm" path="res://player.tscn" id="1_j4knv"]
 [ext_resource type="Script" path="res://mist.gd" id="2_kyo8u"]
-[ext_resource type="PackedScene" uid="uid://dy0qjs0n5tht4" path="res://platform_segment_simple.tscn" id="3_p45ck"]
-[ext_resource type="PackedScene" uid="uid://oo3c0v3ygmv0" path="res://ghost.tscn" id="4_ob6w3"]
-[ext_resource type="PackedScene" uid="uid://b6wxrdseugf7c" path="res://crumble_platform.tscn" id="5_esrli"]
-[ext_resource type="PackedScene" uid="uid://pcp3ity8cgit" path="res://moving_platform.tscn" id="6_2w3qf"]
-[ext_resource type="PackedScene" uid="uid://vsotnunxg7b7" path="res://knight_enemy.tscn" id="7_r8l1n"]
+[ext_resource type="PackedScene" uid="uid://dy0qjs0n5tht4" path="res://platforms/platform_segment_simple.tscn" id="3_p45ck"]
+[ext_resource type="PackedScene" uid="uid://oo3c0v3ygmv0" path="res://enemies/ghost.tscn" id="4_ob6w3"]
+[ext_resource type="PackedScene" uid="uid://b6wxrdseugf7c" path="res://platforms/crumble_platform.tscn" id="5_esrli"]
+[ext_resource type="PackedScene" uid="uid://pcp3ity8cgit" path="res://platforms/moving_platform.tscn" id="6_2w3qf"]
+[ext_resource type="PackedScene" uid="uid://vsotnunxg7b7" path="res://enemies/knight_enemy.tscn" id="7_r8l1n"]
 
 [sub_resource type="Environment" id="Environment_xfckt"]
 background_mode = 1

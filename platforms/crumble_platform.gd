@@ -13,7 +13,8 @@ const r1_to_origin_distance := r1 * (cos(half_segment_angle))
 const radial_length := r2 - r1 
 const tangent_width := r1 * (sin(segment_angle))
 
-const crumbnle_time = 2
+# TODO: make this an exported variable
+const crumble_time = 2
 
 var _is_crumbling := false
 var _crumble_counter := 0.0
@@ -68,9 +69,8 @@ func create_collision_shape(box_shape: BoxShape3D) -> CollisionShape3D:
 	return collision_shape
 	
 func _process(delta: float) -> void:
-	if self._is_crumbling:#
-		print(_crumble_counter)
-		if self._crumble_counter > crumbnle_time:
+	if self._is_crumbling:
+		if self._crumble_counter > crumble_time:
 			queue_free()
 		else:
 			self._crumble_counter += delta

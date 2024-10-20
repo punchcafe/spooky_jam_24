@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://oo3c0v3ygmv0"]
 
-[ext_resource type="Script" path="res://ghost.gd" id="1_k2ntb"]
+[ext_resource type="Script" path="res://enemies/ghost.gd" id="1_k2ntb"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_hxokx"]
 

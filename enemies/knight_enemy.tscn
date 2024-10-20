@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://vsotnunxg7b7"]
 
-[ext_resource type="Script" path="res://knight_enemy.gd" id="1_puw6w"]
+[ext_resource type="Script" path="res://enemies/knight_enemy.gd" id="1_puw6w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w6dwc"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -11,7 +11,7 @@ size = Vector3(0.5, 0.5, 0.5)
 size = Vector3(0.5, 0.2, 0.5)
 
 [node name="KnightEnemy" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0.962744, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 1, 0)
 script = ExtResource("1_puw6w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
