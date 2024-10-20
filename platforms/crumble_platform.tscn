@@ -4,6 +4,7 @@
 
 [node name="Node3D" type="Node3D"]
 
-[node name="StaticBody3D7" type="AnimatableBody3D" parent="."]
+[node name="CrumblePlatform" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
 script = ExtResource("1_e5yxt")
+crumble_time = 1.0

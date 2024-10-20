@@ -13,8 +13,7 @@ const r1_to_origin_distance := r1 * (cos(half_segment_angle))
 const radial_length := r2 - r1 
 const tangent_width := r1 * (sin(segment_angle))
 
-# TODO: make this an exported variable
-const crumble_time = 2
+@export var crumble_time := 2.0
 
 var _is_crumbling := false
 var _crumble_counter := 0.0
