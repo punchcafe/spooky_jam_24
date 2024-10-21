@@ -6,9 +6,8 @@
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(0.999921, 0, 0, 0, 1, 0, 0, 0, 0.999921, 0, 0, 0)
 script = ExtResource("1_s1f2q")
-speed_degrees_per_second = null
 
 [node name="MovingPlatform" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 0)
 script = ExtResource("1_ltn1n")
-speed_degrees_per_second = null
+speed_degrees_per_second = 3.0

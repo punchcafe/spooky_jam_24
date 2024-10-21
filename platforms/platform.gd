@@ -1,5 +1,6 @@
 @tool
 extends AnimatableBody3D
+class_name Platform
 
 const r1 := 7.0
 const r2 := 10.0
@@ -12,10 +13,15 @@ const r1_to_origin_distance := r1 * (cos(half_segment_angle))
 const radial_length := r2 - r1 
 const tangent_width := r1 * (sin(segment_angle))
 
+var _lhs_collision_anchor : Node3D
+var _rhs_collision_anchor : Node3D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	add_child(_create_wing(1))
-	add_child(_create_wing(-1))
+	_lhs_collision_anchor = _create_wing(1)
+	_rhs_collision_anchor = _create_wing(-1)
+	add_child(_lhs_collision_anchor)
+	add_child(_rhs_collision_anchor)
 	add_box_child(self)
 	position.x = r1
 	
