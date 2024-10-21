@@ -254,6 +254,7 @@ transform = Transform3D(0.93892, 0, 0.344135, 0, 1, 0, -0.344135, 0, 0.93892, 0,
 [node name="MovingPlatform" parent="." instance=ExtResource("6_2w3qf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 angle_change = 30.0
+speed_degrees_per_second = 30.0
 vertical_change = 1.0
 
 [node name="KnightEnemy" parent="." instance=ExtResource("7_r8l1n")]

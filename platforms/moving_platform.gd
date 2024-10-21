@@ -15,12 +15,13 @@ const tangent_width := r1 * (sin(segment_angle))
 
 @export var initial_rotation_deg := 0.0
 @export var initial_y := 1.0
+# TODO: rename total_angle_change
 @export var angle_change := 10.0
-@export var speed := 10.0
+@export var speed_degrees_per_second := 4.0
 @export var vertical_change := 0.0
 @export var show_end_position := false
 
-var _interpolation_weight_accumulator := 0.
+var _current_angle_change := 0.
 var _interpolation_weight_change_sign = 1.0
 var _from_transform : Transform3D
 var _to_transform : Transform3D
@@ -68,13 +69,13 @@ func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		_in_editor_updates()
 		return
-	var completion_ratio = self._interpolation_weight_accumulator
-	self.transform = _from_transform.rotated(Vector3(0, 1, 0), deg_to_rad(self.angle_change) * self._interpolation_weight_accumulator).translated(Vector3(0., self.vertical_change * self._interpolation_weight_accumulator, 0.))
-	var new_weight = self._interpolation_weight_accumulator + ((self._interpolation_weight_change_sign * delta))
-	if(new_weight <= 0 or new_weight >= 1):
+	var new_angle_change = _current_angle_change + (self._interpolation_weight_change_sign * delta * self.speed_degrees_per_second)
+	var completion_ratio = new_angle_change / self.angle_change
+	if(completion_ratio <= 0 or completion_ratio >= 1):
 		self._interpolation_weight_change_sign *= -1.0
 	else:
-		self._interpolation_weight_accumulator = new_weight
+		self.transform = _from_transform.rotated(Vector3(0, 1, 0), deg_to_rad(self.angle_change) * completion_ratio).translated(Vector3(0., self.vertical_change * completion_ratio, 0.))
+		self._current_angle_change = new_angle_change
 		
 func _destination_transform(initial_transform: Transform3D) -> Transform3D:
 	return _from_transform.rotated(Vector3(0, 1, 0), deg_to_rad(self.angle_change)).translated(Vector3(0., self.vertical_change, 0.))
