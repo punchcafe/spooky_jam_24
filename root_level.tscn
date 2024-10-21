@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bi010r54j6p82"]
+[gd_scene load_steps=12 format=3 uid="uid://bi010r54j6p82"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_rwbck"]
 [ext_resource type="Script" path="res://mist.gd" id="2_kyo8u"]
 [ext_resource type="PackedScene" uid="uid://dy0qjs0n5tht4" path="res://platform_segment_simple.tscn" id="3_p45ck"]
+[ext_resource type="PackedScene" uid="uid://dronkxqc1bi0f" path="res://Models/spookyjam_walls.gltf" id="3_v0bu6"]
 [ext_resource type="PackedScene" uid="uid://oo3c0v3ygmv0" path="res://ghost.tscn" id="4_ob6w3"]
 [ext_resource type="PackedScene" uid="uid://b6wxrdseugf7c" path="res://crumble_platform.tscn" id="5_esrli"]
 
@@ -17,7 +18,6 @@ background_color = Color(0.219608, 0, 0.203922, 1)
 background_energy_multiplier = 1.42
 ambient_light_source = 3
 ambient_light_color = Color(0, 0, 0.65098, 1)
-fog_enabled = true
 fog_light_color = Color(0.790632, 0.444495, 0.576032, 1)
 fog_light_energy = 3.11
 fog_sky_affect = 0.0
@@ -105,6 +105,15 @@ transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 0,
 
 [node name="StaticBody3D9" parent="Ring/Path4" instance=ExtResource("3_p45ck")]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 0.43, 0)
+
+[node name="spookyjam_castlewall" parent="." instance=ExtResource("3_v0bu6")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="spookyjam_castlewall"]
+transform = Transform3D(1, 0, 0, 0, 0.0368878, 0.999319, 0, -0.999319, 0.0368878, 0, 6.41669, -9.48969)
+light_energy = 10.08
+light_volumetric_fog_energy = 2.34
+light_size = 0.878
+light_specular = 4.265
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -23.4177, 0)
