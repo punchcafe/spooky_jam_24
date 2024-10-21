@@ -12,23 +12,23 @@ var _direction := -1
 
 @export var starting_rotation_degrees := 0.0
 @export var starting_height := 1.0
+@export var speed_degrees_per_second := 10.0
+
+var _speed_rads_per_second : float
 
 func _ready():
+	self._speed_rads_per_second = deg_to_rad(speed_degrees_per_second)
 	self.transform = _initial_transform()
 
 func current_delta():
 	return AngularMotionUtils.rotation_from_vec3(get_position())
-	
-func die():
-	get_tree().reload_current_scene()
 
 func theta_change(delta: float) -> float:
 	if fall_area().has_overlapping_bodies():
-		return _direction * 0.001
+		return _direction * delta * deg_to_rad(speed_degrees_per_second)
 	else:
 		_direction *= -1
 		return 0
-	
 
 func fall_area() -> Area3D:
 	if _direction == -1:
