@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dy0qjs0n5tht4"]
+[gd_scene load_steps=4 format=3 uid="uid://dy0qjs0n5tht4"]
 
 [ext_resource type="Script" path="res://platform_segment_simple.gd" id="1_l27jw"]
 [ext_resource type="PackedScene" uid="uid://dx6yjrtg8lgxp" path="res://Models/spookyjam_pillar1.gltf" id="2_7hmo3"]
+[ext_resource type="PackedScene" uid="uid://wly3qtvjqwo" path="res://Models/spookyjam_platform_wide.gltf" id="3_ef0q8"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -11,3 +12,7 @@ script = ExtResource("1_l27jw")
 
 [node name="blockbench_export" parent="." instance=ExtResource("2_7hmo3")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 6.45333, -0.0956452, 0.101574)
+visible = false
+
+[node name="blockbench_export2" parent="." instance=ExtResource("3_ef0q8")]
+transform = Transform3D(5.43585e-08, 0, 0.72, 0, 0.72, 0, -0.72, 0, 5.43585e-08, 6.77598, -0.273583, -0.0117221)
