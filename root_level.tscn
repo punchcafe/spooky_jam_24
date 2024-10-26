@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bi010r54j6p82"]
+[gd_scene load_steps=12 format=3 uid="uid://bi010r54j6p82"]
 
 [ext_resource type="PackedScene" uid="uid://biaidqh46uhsm" path="res://player.tscn" id="1_j4knv"]
 [ext_resource type="Script" path="res://mist.gd" id="2_kyo8u"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b6wxrdseugf7c" path="res://platforms/crumble_platform.tscn" id="5_esrli"]
 [ext_resource type="PackedScene" uid="uid://pcp3ity8cgit" path="res://platforms/moving_platform.tscn" id="6_2w3qf"]
 [ext_resource type="PackedScene" uid="uid://vsotnunxg7b7" path="res://enemies/knight_enemy.tscn" id="7_r8l1n"]
+[ext_resource type="PackedScene" uid="uid://bb1bm8mu6hlpi" path="res://assets/spookyjam_castleouter_05.gltf" id="8_vscdi"]
 
 [sub_resource type="Environment" id="Environment_xfckt"]
 background_mode = 1
@@ -283,5 +284,11 @@ light_color = Color(0.582177, 0.412256, 1, 1)
 light_energy = 0.313
 light_indirect_energy = 1.72
 light_volumetric_fog_energy = 0.985
+
+[node name="TowerWall" parent="." instance=ExtResource("8_vscdi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.63556, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TowerWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.96275, -9.77106)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
