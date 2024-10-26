@@ -18,7 +18,7 @@ func player_character():
 	pass
 	
 func die():
-	get_tree().reload_current_scene()
+	get_tree().call_group("game_over_listeners", "handle_game_over")
 
 func theta_change(delta: float):
 	if Input.is_action_pressed("ui_right"):
