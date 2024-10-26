@@ -10,12 +10,11 @@
 
 [sub_resource type="Environment" id="Environment_xfckt"]
 background_mode = 1
-background_color = Color(0.219608, 0, 0.203922, 1)
+background_color = Color(0.0454565, 3.88054e-05, 0.167646, 1)
 background_energy_multiplier = 1.42
 ambient_light_source = 3
-ambient_light_color = Color(0, 0, 0.65098, 1)
 fog_enabled = true
-fog_light_color = Color(0.790632, 0.444495, 0.576032, 1)
+fog_light_color = Color(0.0595, 0.063525, 0.07, 1)
 fog_light_energy = 3.11
 fog_sky_affect = 0.0
 fog_height = 679.07
@@ -274,5 +273,15 @@ speed_degrees_per_second = 20.0
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 4.75, 2, 8.22724)
 starting_rotation_degrees = 300.0
 starting_height = 2.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0162484, -0.999868, 0, 0.999868, 0.0162484, 0, -16.2378, 0)
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0122518, 0.999925, 0, -0.999925, 0.0122518, 0, 9.83624, 0)
+light_color = Color(0.582177, 0.412256, 1, 1)
+light_energy = 0.313
+light_indirect_energy = 1.72
+light_volumetric_fog_energy = 0.985
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

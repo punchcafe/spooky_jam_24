@@ -5,7 +5,7 @@ class_name Platform
 const r1 := 7.0
 const r2 := 10.0
 const total_segments := 36
-const platform_thickness := 0.2
+const platform_thickness := 0.33
 
 const segment_angle := ((2 * PI) / 36)
 const half_segment_angle := segment_angle / 2

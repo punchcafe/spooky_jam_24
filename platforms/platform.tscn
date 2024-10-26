@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dy0qjs0n5tht4"]
+[gd_scene load_steps=3 format=3 uid="uid://dy0qjs0n5tht4"]
 
 [ext_resource type="Script" path="res://platforms/platform.gd" id="1_qy53a"]
+[ext_resource type="PackedScene" uid="uid://5d6vd7ingsa6" path="res://assets/spookyjam_platform_wide.gltf" id="2_i00m5"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="StaticBody3D7" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
 script = ExtResource("1_qy53a")
+
+[node name="PlatformModel" parent="." instance=ExtResource("2_i00m5")]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 6.70088, -0.154007, 0)
