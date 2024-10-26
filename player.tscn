@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://biaidqh46uhsm"]
+[gd_scene load_steps=5 format=3 uid="uid://biaidqh46uhsm"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_8idxh"]
 
@@ -6,6 +6,9 @@
 size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_fxr3r"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_6ov6l"]
+dof_blur_far_enabled = true
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0.962744, 0)
@@ -20,3 +23,7 @@ mesh = SubResource("BoxMesh_fxr3r")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-4.34303e-08, 0.113221, 0.99357, 4.94903e-09, 0.99357, -0.113221, -1, -2.63055e-15, -4.37114e-08, 2.61814, 0.249611, 0)
+attributes = SubResource("CameraAttributesPractical_6ov6l")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.625055, 0.369082, 1, 1)
