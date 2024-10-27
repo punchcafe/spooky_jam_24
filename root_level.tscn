@@ -48,6 +48,7 @@ transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984808, 
 
 [node name="StaticBody3D8" parent="Ring/Path" instance=ExtResource("3_p45ck")]
 transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 0, 0.43, 0)
+broken_pillar = true
 
 [node name="StaticBody3D9" parent="Ring/Path" instance=ExtResource("3_p45ck")]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 0.43, 0)
@@ -116,6 +117,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43, 0)
 
 [node name="StaticBody3D8" parent="Quarter Ring" instance=ExtResource("3_p45ck")]
 transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 0, 0.43, 0)
+regular_pillar = true
 
 [node name="StaticBody3D9" parent="Quarter Ring" instance=ExtResource("3_p45ck")]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 0.43, 0)
@@ -187,12 +189,13 @@ transform = Transform3D(-0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, -0.939693, 
 
 [node name="StaticBody3D24" parent="Half Ring" instance=ExtResource("3_p45ck")]
 transform = Transform3D(-0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, -0.939693, 0, 0.43, 0)
+regular_pillar = true
 
 [node name="StaticBody3D15" parent="Half Ring" instance=ExtResource("3_p45ck")]
 transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808, 0, 0.43, 0)
 
 [node name="Half Ring2" type="Node3D" parent="."]
-transform = Transform3D(-0.980908, 0, -0.194474, 0, 1, 0, 0.194474, 0, -0.980908, 0, 2, 0)
+transform = Transform3D(-0.760554, 0, -0.649276, 0, 1, 0, 0.649276, 0, -0.760554, 0, 4.19851, 0)
 
 [node name="StaticBody3D7" parent="Half Ring2" instance=ExtResource("3_p45ck")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43, 0)
@@ -253,9 +256,12 @@ transform = Transform3D(0.93892, 0, 0.344135, 0, 1, 0, -0.344135, 0, 0.93892, 0,
 
 [node name="MovingPlatform" parent="." instance=ExtResource("6_2w3qf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-angle_change = 30.0
+initial_rotation_deg = 10.0
+initial_y = 1.5
+angle_change = 35.0
 half_frequency = 0.5
-vertical_change = 1.0
+vertical_change = 2.8
+show_end_position = true
 
 [node name="MovingPlatform2" parent="." instance=ExtResource("6_2w3qf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -289,6 +295,6 @@ light_volumetric_fog_energy = 0.985
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.63556, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TowerWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.96275, -9.77106)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.456147, -9.77106)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
