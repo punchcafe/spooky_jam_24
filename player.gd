@@ -6,8 +6,12 @@ const JUMP_VELOCITY = 9.0
 const RADIUS = 9.5
 const RADIUS_SQUARED = RADIUS ** 2
 
+var currently_awaiting_animation := false
 var theta := 0.0
 var double_jumped = false
+var _is_player_dying := false
+
+var _callback = null
 
 func current_delta():
 	return AngularMotionUtils.rotation_from_vec3(get_position())
@@ -18,10 +22,20 @@ func player_character():
 	pass
 	
 func die():
+	if _is_player_dying:
+		return
+	_is_player_dying = true
+	$AnimationPlayer.stop()
+	$AnimationPlayer.queue("dying")
+	self._callback = self.end_game
+
+func end_game():
 	get_tree().reload_current_scene()
 
 func theta_change(delta: float):
-	if Input.is_action_pressed("ui_right"):
+	if _is_player_dying:
+		return 0
+	elif Input.is_action_pressed("ui_right"):
 		return -0.5 * delta
 	elif Input.is_action_pressed("ui_left"):
 		return 0.5 * delta
@@ -43,7 +57,8 @@ func _physics_process(delta: float) -> void:
 		
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") and not _is_player_dying:
+		# TODO extract to dying movement strategy
 		if is_on_floor():
 			_jump()
 		elif not double_jumped:
@@ -70,5 +85,31 @@ func _double_jump():
 	_jump()
 	
 func _process(delta: float) -> void:
+	_choose_animation(delta)
+	
 	#pass
 	rotation = Vector3(0, -1 * current_delta(), 0)
+
+func _choose_animation(delta):
+	if _is_player_dying == true:
+		return
+	var change = theta_change(delta)
+	if is_on_floor():
+		if is_zero_approx(change):
+			$AnimationPlayer.play("standing")
+			# return early to keep flip_h from last turn
+			return
+		else:
+			$AnimationPlayer.play("running")
+	else:
+		if abs(velocity.y) < 4:
+			$AnimationPlayer.play("jumping_midair")
+		elif velocity.y > 0:
+			$AnimationPlayer.play("jumping_ascending")
+		else:
+			$AnimationPlayer.play("jumping_falling")
+	$Sprite3D.set_flip_h(change > 0)
+		
+	
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
+	self._callback.call()
