@@ -18,6 +18,9 @@ config/icon="res://game-icon.png"
 [dotnet]
 
 project/assembly_name="Spooky Jam 24"
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
 
 [input]
 
