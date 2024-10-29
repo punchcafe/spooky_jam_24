@@ -39,9 +39,10 @@ func add_box_child(node: Node):
 	# TODO: probably better to use a single box_shape?
 	var box_shape := create_box_shape()
 	var collision_shape := create_collision_shape(box_shape)
-	var box_mesh = MeshInstance3D.new()
-	box_mesh.mesh = box_shape.get_debug_mesh()
-	collision_shape.add_child(box_mesh)
+	if Engine.is_editor_hint():
+		var box_mesh = MeshInstance3D.new()
+		box_mesh.mesh = box_shape.get_debug_mesh()
+		collision_shape.add_child(box_mesh)
 	node.add_child(collision_shape)
 	collision_shape.translate(Vector3(radial_length / 2, 0, 0))
 
