@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://pcp3ity8cgit"]
+[gd_scene load_steps=5 format=3 uid="uid://pcp3ity8cgit"]
 
 [ext_resource type="Script" path="res://platforms/moving_platform.gd" id="1_ltn1n"]
 [ext_resource type="Script" path="res://platforms/moving_platform_proxy.gd" id="1_s1f2q"]
-[ext_resource type="PackedScene" uid="uid://5d6vd7ingsa6" path="res://assets/spookyjam_platform_wide.gltf" id="3_rt8lt"]
+[ext_resource type="PackedScene" uid="uid://crqa3t8mwt0y7" path="res://Models/spookyjam_platform_wide_moving.gltf" id="3_b2fe0"]
+[ext_resource type="PackedScene" uid="uid://c33fu3x2xocb3" path="res://assets/spookyjam_platform_wide.gltf" id="3_rt8lt"]
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(0.999921, 0, 0, 0, 1, 0, 0, 0, 0.999921, 0, 0, 0)
@@ -15,5 +16,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 0)
 script = ExtResource("1_ltn1n")
 half_frequency = 0.0
 
+[node name="blockbench_export" parent="MovingPlatform" instance=ExtResource("3_b2fe0")]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, -0.1721, -0.174211, 0)
+
 [node name="PlatformModel" parent="MovingPlatform" instance=ExtResource("3_rt8lt")]
 transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, -0.1721, -0.174211, 0)
+visible = false
