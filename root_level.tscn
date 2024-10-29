@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b6wxrdseugf7c" path="res://platforms/crumble_platform.tscn" id="5_esrli"]
 [ext_resource type="PackedScene" uid="uid://pcp3ity8cgit" path="res://platforms/moving_platform.tscn" id="6_2w3qf"]
 [ext_resource type="PackedScene" uid="uid://vsotnunxg7b7" path="res://enemies/knight_enemy.tscn" id="7_r8l1n"]
-[ext_resource type="PackedScene" uid="uid://cd1t3fxhxdm2c" path="res://assets/spookyjam_castleouter_05.gltf" id="8_vscdi"]
+[ext_resource type="PackedScene" uid="uid://4ts6jvbc10li" path="res://Models/spookyjam_walls.gltf" id="8_byfi8"]
 
 [sub_resource type="Environment" id="Environment_xfckt"]
 background_mode = 1
@@ -291,11 +291,9 @@ light_energy = 0.313
 light_indirect_energy = 1.72
 light_volumetric_fog_energy = 0.985
 
-[node name="TowerWall" parent="." instance=ExtResource("8_vscdi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.63556, 0)
-visible = false
+[node name="blockbench_export" parent="." instance=ExtResource("8_byfi8")]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TowerWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.456147, -9.77106)
+[node name="OmniLight3D" type="OmniLight3D" parent="blockbench_export"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.09171, -9.77106)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
