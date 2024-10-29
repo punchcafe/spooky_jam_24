@@ -3,8 +3,11 @@ extends Platform
 class_name CrumblePlatform
 
 @export var crumble_time := 2.0
+var _fall_time := 0.75
 
 var _is_crumbling := false
+var _is_falling := false
+var _fall_counter := 0.0
 var _crumble_counter := 0.0
 
 # Called when the node enters the scene tree for the first time.
@@ -29,8 +32,17 @@ func _body_entered_crumble_zone(body: Node):
 
 	
 func _process(delta: float) -> void:
+	if self._is_falling:
+		if self._fall_counter > self._fall_time:
+			get_parent().queue_free()
+		else:
+			self._fall_counter += delta
+			$mesh.get_node("./AnimationPlayer").play("crumblefall")
 	if self._is_crumbling:
 		if self._crumble_counter > crumble_time:
-			queue_free()
+			self._is_falling = true
+			for child in self.get_children().slice(1):
+				child.queue_free()
 		else:
+			$mesh.get_node("./AnimationPlayer").play("crumbleloop")
 			self._crumble_counter += delta

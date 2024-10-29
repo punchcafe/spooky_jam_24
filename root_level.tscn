@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b6wxrdseugf7c" path="res://platforms/crumble_platform.tscn" id="5_esrli"]
 [ext_resource type="PackedScene" uid="uid://pcp3ity8cgit" path="res://platforms/moving_platform.tscn" id="6_2w3qf"]
 [ext_resource type="PackedScene" uid="uid://vsotnunxg7b7" path="res://enemies/knight_enemy.tscn" id="7_r8l1n"]
-[ext_resource type="PackedScene" uid="uid://bb1bm8mu6hlpi" path="res://assets/spookyjam_castleouter_05.gltf" id="8_vscdi"]
+[ext_resource type="PackedScene" uid="uid://cd1t3fxhxdm2c" path="res://assets/spookyjam_castleouter_05.gltf" id="8_vscdi"]
 
 [sub_resource type="Environment" id="Environment_xfckt"]
 background_mode = 1
@@ -252,7 +252,7 @@ transform = Transform3D(-0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, -0.939693, 
 transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808, 0, 0.43, 0)
 
 [node name="Node3D" parent="." instance=ExtResource("5_esrli")]
-transform = Transform3D(0.93892, 0, 0.344135, 0, 1, 0, -0.344135, 0, 0.93892, 0, 0.81, 0)
+transform = Transform3D(0.909469, 0, 0.415773, 0, 1, 0, -0.415773, 0, 0.909469, 0, 1.13823, 0)
 
 [node name="MovingPlatform" parent="." instance=ExtResource("6_2w3qf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -293,6 +293,7 @@ light_volumetric_fog_energy = 0.985
 
 [node name="TowerWall" parent="." instance=ExtResource("8_vscdi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.63556, 0)
+visible = false
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TowerWall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.456147, -9.77106)
