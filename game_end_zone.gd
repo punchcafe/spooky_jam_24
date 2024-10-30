@@ -5,7 +5,11 @@ var _awaiting_input := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	var animation_player := $blockbench_export.get_node("AnimationPlayer") as AnimationPlayer
+	animation_player.play("clockloopreverse")
+	# TODO: fix this code
+	animation_player = $blockbench_export2.get_node("AnimationPlayer") as AnimationPlayer
+	animation_player.play("clockloopreverse")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
