@@ -180,6 +180,7 @@ mesh = SubResource("BoxMesh_fxr3r")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-4.34303e-08, 0.113221, 0.99357, 4.94903e-09, 0.99357, -0.113221, -1, -2.63055e-15, -4.37114e-08, 2.61814, 0.249611, 0)
+cull_mask = 3
 attributes = SubResource("CameraAttributesPractical_6ov6l")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
