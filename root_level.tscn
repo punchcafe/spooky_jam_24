@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bi010r54j6p82"]
+[gd_scene load_steps=14 format=3 uid="uid://bi010r54j6p82"]
 
 [ext_resource type="PackedScene" uid="uid://biaidqh46uhsm" path="res://player.tscn" id="1_j4knv"]
 [ext_resource type="Script" path="res://mist.gd" id="2_kyo8u"]
@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b6wxrdseugf7c" path="res://platforms/crumble_platform.tscn" id="5_esrli"]
 [ext_resource type="PackedScene" uid="uid://pcp3ity8cgit" path="res://platforms/moving_platform.tscn" id="6_2w3qf"]
 [ext_resource type="PackedScene" uid="uid://vsotnunxg7b7" path="res://enemies/knight_enemy.tscn" id="7_r8l1n"]
-[ext_resource type="PackedScene" uid="uid://4ts6jvbc10li" path="res://Models/spookyjam_walls.gltf" id="8_byfi8"]
+[ext_resource type="PackedScene" uid="uid://eha0fode375o" path="res://Models/spookyjam_walls.gltf" id="8_byfi8"]
+[ext_resource type="PackedScene" uid="uid://d0qe6hxvf1nif" path="res://game_end_zone.tscn" id="8_ui7x1"]
 
 [sub_resource type="Environment" id="Environment_xfckt"]
 background_mode = 1
@@ -40,7 +41,7 @@ height_falloff = 1e-05
 [node name="Origin" type="Node3D"]
 
 [node name="player" parent="." instance=ExtResource("1_j4knv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 2.86379, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 45.4429, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_xfckt")
@@ -153,6 +154,37 @@ transform = Transform3D(0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, 0.34202, 0,
 [node name="StaticBody3D14" parent="Quarter Ring" instance=ExtResource("3_p45ck")]
 transform = Transform3D(0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, 0.173648, 0, 0.43, 0)
 
+[node name="Quarter Ring2" type="Node3D" parent="."]
+transform = Transform3D(0.677158, 0, -0.735837, 0, 1, 0, 0.735837, 0, 0.677158, 0, 43.9786, 0)
+
+[node name="StaticBody3D15" parent="Quarter Ring2" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984808, 0, 0.43, 0)
+
+[node name="StaticBody3D7" parent="Quarter Ring2" instance=ExtResource("3_p45ck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43, 0)
+
+[node name="StaticBody3D8" parent="Quarter Ring2" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 0, 0.43, 0)
+regular_pillar = true
+
+[node name="StaticBody3D9" parent="Quarter Ring2" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 0.43, 0)
+
+[node name="StaticBody3D10" parent="Quarter Ring2" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.766045, 0, -0.642788, 0, 1, 0, 0.642788, 0, 0.766045, 0, 0.43, 0)
+
+[node name="StaticBody3D11" parent="Quarter Ring2" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.642788, 0, -0.766045, 0, 1, 0, 0.766045, 0, 0.642788, 0, 0.43, 0)
+
+[node name="StaticBody3D12" parent="Quarter Ring2" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0, 0.43, 0)
+
+[node name="StaticBody3D13" parent="Quarter Ring2" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, 0.34202, 0, 0.43, 0)
+
+[node name="StaticBody3D14" parent="Quarter Ring2" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, 0.173648, 0, 0.43, 0)
+
 [node name="Half Ring" type="Node3D" parent="."]
 
 [node name="StaticBody3D7" parent="Half Ring" instance=ExtResource("3_p45ck")]
@@ -208,6 +240,64 @@ transform = Transform3D(-0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, -0.939693, 
 regular_pillar = true
 
 [node name="StaticBody3D15" parent="Half Ring" instance=ExtResource("3_p45ck")]
+transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808, 0, 0.43, 0)
+
+[node name="Half Ring3" type="Node3D" parent="."]
+transform = Transform3D(-0.679902, 0, 0.733303, 0, 1, 0, -0.733303, 0, -0.679902, 0, 43.9886, 0)
+
+[node name="StaticBody3D7" parent="Half Ring3" instance=ExtResource("3_p45ck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43, 0)
+
+[node name="StaticBody3D8" parent="Half Ring3" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 0, 0.43, 0)
+
+[node name="StaticBody3D9" parent="Half Ring3" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 0.43, 0)
+
+[node name="StaticBody3D10" parent="Half Ring3" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.766045, 0, -0.642788, 0, 1, 0, 0.642788, 0, 0.766045, 0, 0.43, 0)
+
+[node name="StaticBody3D11" parent="Half Ring3" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.642788, 0, -0.766045, 0, 1, 0, 0.766045, 0, 0.642788, 0, 0.43, 0)
+
+[node name="StaticBody3D12" parent="Half Ring3" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0, 0.43, 0)
+
+[node name="StaticBody3D13" parent="Half Ring3" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, 0.34202, 0, 0.43, 0)
+
+[node name="StaticBody3D14" parent="Half Ring3" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, 0.173648, 0, 0.43, 0)
+
+[node name="StaticBody3D17" parent="Half Ring3" instance=ExtResource("3_p45ck")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.43, 0)
+
+[node name="StaticBody3D16" parent="Half Ring3" instance=ExtResource("3_p45ck")]
+transform = Transform3D(-0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, -0.173648, 0, 0.43, 0)
+
+[node name="StaticBody3D18" parent="Half Ring3" instance=ExtResource("3_p45ck")]
+transform = Transform3D(-0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, -0.34202, 0, 0.43, 0)
+
+[node name="StaticBody3D19" parent="Half Ring3" instance=ExtResource("3_p45ck")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 0, 0.43, 0)
+
+[node name="StaticBody3D20" parent="Half Ring3" instance=ExtResource("3_p45ck")]
+transform = Transform3D(-0.642788, 0, -0.766045, 0, 1, 0, 0.766045, 0, -0.642788, 0, 0.43, 0)
+
+[node name="StaticBody3D21" parent="Half Ring3" instance=ExtResource("3_p45ck")]
+transform = Transform3D(-0.766045, 0, -0.642788, 0, 1, 0, 0.642788, 0, -0.766045, 0, 0.43, 0)
+
+[node name="StaticBody3D22" parent="Half Ring3" instance=ExtResource("3_p45ck")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 0, 0.43, 0)
+
+[node name="StaticBody3D23" parent="Half Ring3" instance=ExtResource("3_p45ck")]
+transform = Transform3D(-0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, -0.939693, 0, 0.43, 0)
+
+[node name="StaticBody3D24" parent="Half Ring3" instance=ExtResource("3_p45ck")]
+transform = Transform3D(-0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, -0.939693, 0, 0.43, 0)
+regular_pillar = true
+
+[node name="StaticBody3D15" parent="Half Ring3" instance=ExtResource("3_p45ck")]
 transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808, 0, 0.43, 0)
 
 [node name="Half Ring2" type="Node3D" parent="."]
@@ -306,6 +396,9 @@ light_color = Color(0.582177, 0.412256, 1, 1)
 light_energy = 0.313
 light_indirect_energy = 1.72
 light_volumetric_fog_energy = 0.985
+
+[node name="GameEndZone" parent="." instance=ExtResource("8_ui7x1")]
+transform = Transform3D(0.968583, 0, 0.24869, 0, 1, 0, -0.24869, 0, 0.968583, 0, 0, 0)
 
 [node name="blockbench_export" parent="." instance=ExtResource("8_byfi8")]
 
