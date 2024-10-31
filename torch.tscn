@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnw23qfahu3rt"]
+
+[ext_resource type="Script" path="res://torch.gd" id="1_2w3r2"]
+[ext_resource type="PackedScene" uid="uid://c0xny1fjdt8u7" path="res://Models/spookyjam_torch.gltf" id="1_cbe61"]
+
+[node name="TorchAnchor" type="Node3D"]
+
+[node name="Torch" type="Node3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 10, 0, 0)
+script = ExtResource("1_2w3r2")
+
+[node name="blockbench_export" parent="Torch" instance=ExtResource("1_cbe61")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31063, 2.44857, 0)
+light_color = Color(1, 0.0784314, 0.207843, 1)
+light_energy = 1.135
+light_indirect_energy = 2.315
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Torch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31063, 4.05412, 0)
+light_color = Color(1, 0.411765, 0.207843, 1)
+light_energy = 16.0
+light_indirect_energy = 2.315

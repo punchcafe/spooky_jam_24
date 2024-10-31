@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bi010r54j6p82"]
+[gd_scene load_steps=15 format=3 uid="uid://bi010r54j6p82"]
 
 [ext_resource type="PackedScene" uid="uid://biaidqh46uhsm" path="res://player.tscn" id="1_j4knv"]
 [ext_resource type="Script" path="res://mist.gd" id="2_kyo8u"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://eha0fode375o" path="res://Models/spookyjam_walls.gltf" id="8_byfi8"]
 [ext_resource type="PackedScene" uid="uid://d0qe6hxvf1nif" path="res://game_end_zone.tscn" id="8_ui7x1"]
 [ext_resource type="PackedScene" uid="uid://ctw4s4vviifya" path="res://Models/spookyjam_walls_extra.gltf" id="9_kq8vb"]
+[ext_resource type="PackedScene" uid="uid://dnw23qfahu3rt" path="res://torch.tscn" id="11_y0ky4"]
 
 [sub_resource type="Environment" id="Environment_xfckt"]
 background_mode = 1
@@ -710,5 +711,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -86.2252, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="blockbench_export"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.09171, -9.77106)
+
+[node name="TorchAnchor" parent="." instance=ExtResource("11_y0ky4")]
+transform = Transform3D(-0.125333, 0, -0.992115, 0, 1, 0, 0.992115, 0, -0.125333, 0, 1.86304, 0)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
