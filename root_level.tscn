@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bi010r54j6p82"]
+[gd_scene load_steps=14 format=3 uid="uid://bi010r54j6p82"]
 
 [ext_resource type="PackedScene" uid="uid://biaidqh46uhsm" path="res://player.tscn" id="1_j4knv"]
 [ext_resource type="Script" path="res://mist.gd" id="2_kyo8u"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://vsotnunxg7b7" path="res://enemies/knight_enemy.tscn" id="7_r8l1n"]
 [ext_resource type="PackedScene" uid="uid://eha0fode375o" path="res://Models/spookyjam_walls.gltf" id="8_byfi8"]
 [ext_resource type="PackedScene" uid="uid://d0qe6hxvf1nif" path="res://game_end_zone.tscn" id="8_ui7x1"]
+[ext_resource type="PackedScene" uid="uid://ctw4s4vviifya" path="res://Models/spookyjam_walls_extra.gltf" id="9_kq8vb"]
 
 [sub_resource type="Environment" id="Environment_xfckt"]
 background_mode = 1
@@ -210,6 +211,70 @@ transform = Transform3D(0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, 0.34202, 0,
 broken_pillar = true
 
 [node name="StaticBody3D14" parent="Quarter Ring4" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, 0.173648, 0, 0.43, 0)
+
+[node name="Quarter Ring5" type="Node3D" parent="."]
+transform = Transform3D(-0.474042, 0, 0.880502, 0, 1, 0, -0.880502, 0, -0.474042, 0, 43.7905, 0)
+
+[node name="StaticBody3D15" parent="Quarter Ring5" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984808, 0, 0.43, 0)
+
+[node name="StaticBody3D7" parent="Quarter Ring5" instance=ExtResource("3_p45ck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43, 0)
+
+[node name="StaticBody3D8" parent="Quarter Ring5" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 0, 0.43, 0)
+regular_pillar = true
+
+[node name="StaticBody3D9" parent="Quarter Ring5" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 0.43, 0)
+
+[node name="StaticBody3D10" parent="Quarter Ring5" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.766045, 0, -0.642788, 0, 1, 0, 0.642788, 0, 0.766045, 0, 0.43, 0)
+
+[node name="StaticBody3D11" parent="Quarter Ring5" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.642788, 0, -0.766045, 0, 1, 0, 0.766045, 0, 0.642788, 0, 0.43, 0)
+
+[node name="StaticBody3D12" parent="Quarter Ring5" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0, 0.43, 0)
+
+[node name="StaticBody3D13" parent="Quarter Ring5" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, 0.34202, 0, 0.43, 0)
+broken_pillar = true
+
+[node name="StaticBody3D14" parent="Quarter Ring5" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, 0.173648, 0, 0.43, 0)
+
+[node name="Quarter Ring6" type="Node3D" parent="."]
+transform = Transform3D(0.826688, 0, 0.562661, 0, 1, 0, -0.562661, 0, 0.826688, 0, 43.7905, 0)
+
+[node name="StaticBody3D15" parent="Quarter Ring6" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984808, 0, 0.43, 0)
+
+[node name="StaticBody3D7" parent="Quarter Ring6" instance=ExtResource("3_p45ck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43, 0)
+
+[node name="StaticBody3D8" parent="Quarter Ring6" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 0, 0.43, 0)
+regular_pillar = true
+
+[node name="StaticBody3D9" parent="Quarter Ring6" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 0.43, 0)
+
+[node name="StaticBody3D10" parent="Quarter Ring6" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.766045, 0, -0.642788, 0, 1, 0, 0.642788, 0, 0.766045, 0, 0.43, 0)
+
+[node name="StaticBody3D11" parent="Quarter Ring6" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.642788, 0, -0.766045, 0, 1, 0, 0.766045, 0, 0.642788, 0, 0.43, 0)
+
+[node name="StaticBody3D12" parent="Quarter Ring6" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0, 0.43, 0)
+
+[node name="StaticBody3D13" parent="Quarter Ring6" instance=ExtResource("3_p45ck")]
+transform = Transform3D(0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, 0.34202, 0, 0.43, 0)
+broken_pillar = true
+
+[node name="StaticBody3D14" parent="Quarter Ring6" instance=ExtResource("3_p45ck")]
 transform = Transform3D(0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, 0.173648, 0, 0.43, 0)
 
 [node name="Quarter Ring2" type="Node3D" parent="."]
@@ -637,6 +702,9 @@ light_volumetric_fog_energy = 0.985
 
 [node name="GameEndZone" parent="." instance=ExtResource("8_ui7x1")]
 transform = Transform3D(0.968583, 0, 0.24869, 0, 1, 0, -0.24869, 0, 0.968583, 0, 0, 0)
+
+[node name="blockbench_export2" parent="." instance=ExtResource("9_kq8vb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -86.2252, 0)
 
 [node name="blockbench_export" parent="." instance=ExtResource("8_byfi8")]
 

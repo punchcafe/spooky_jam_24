@@ -19,6 +19,7 @@ var _speed_rads_per_second : float
 func _ready():
 	self._speed_rads_per_second = deg_to_rad(speed_degrees_per_second)
 	self.transform = _initial_transform()
+	$AnimationPlayer.play("default")
 
 func current_delta():
 	return AngularMotionUtils.rotation_from_vec3(get_position())
@@ -63,6 +64,7 @@ func _process(delta: float) -> void:
 		_in_editor_updates()
 		return
 	rotation = Vector3(0, -1 * current_delta(), 0)
+	$Sprite3D.flip_h = _direction > 0
 	
 func _initial_transform():
 	return AngularMotionUtils.initial_transformation(

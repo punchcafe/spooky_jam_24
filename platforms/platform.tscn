@@ -2,15 +2,16 @@
 
 [ext_resource type="Script" path="res://platforms/platform.gd" id="1_qy53a"]
 [ext_resource type="Script" path="res://platforms/platform_mesh_switcher.gd" id="1_w7i57"]
-[ext_resource type="PackedScene" uid="uid://c33fu3x2xocb3" path="res://assets/spookyjam_platform_wide.gltf" id="2_i00m5"]
-[ext_resource type="PackedScene" uid="uid://dnps6mm25411w" path="res://assets/spookyjam_pillar1.gltf" id="3_v07jq"]
-[ext_resource type="PackedScene" uid="uid://ddqsqcj0q53ln" path="res://assets/spookyjam_pillar2.gltf" id="4_c308u"]
+[ext_resource type="PackedScene" uid="uid://5d6vd7ingsa6" path="res://assets/spookyjam_platform_wide.gltf" id="2_i00m5"]
+[ext_resource type="PackedScene" uid="uid://iqayuhncidth" path="res://assets/spookyjam_pillar1.gltf" id="3_v07jq"]
+[ext_resource type="PackedScene" uid="uid://copqsyaka0lxt" path="res://assets/spookyjam_pillar2.gltf" id="4_c308u"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_w7i57")
 
 [node name="StaticBody3D7" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+collision_layer = 3
 script = ExtResource("1_qy53a")
 
 [node name="PlatformModel" parent="." instance=ExtResource("2_i00m5")]

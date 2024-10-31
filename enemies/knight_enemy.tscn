@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://vsotnunxg7b7"]
+[gd_scene load_steps=9 format=3 uid="uid://vsotnunxg7b7"]
 
 [ext_resource type="Script" path="res://enemies/knight_enemy.gd" id="1_puw6w"]
+[ext_resource type="Texture2D" uid="uid://cw1rwyfk1xxjf" path="res://enemies/shadow_pumpkin.png" id="2_u0o45"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w6dwc"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -11,10 +12,33 @@ size = Vector3(0.5, 0.5, 0.5)
 size = Vector3(0.5, 0.2, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cy8sb"]
-size = Vector3(0.6, 0.6, 0.6)
+size = Vector3(0.6, 0.6, 0.4)
+
+[sub_resource type="Animation" id="Animation_vvcla"]
+length = 0.747
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.083, 0.166, 0.249, 0.332, 0.415, 0.498, 0.581, 0.664),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ixiiy"]
+_data = {
+"default": SubResource("Animation_vvcla")
+}
 
 [node name="KnightEnemy" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 1, 0)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_puw6w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -22,6 +46,7 @@ shape = SubResource("BoxShape3D_w6dwc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+visible = false
 mesh = SubResource("BoxMesh_fxr3r")
 
 [node name="LHSFallArea" type="Area3D" parent="."]
@@ -43,5 +68,34 @@ shape = SubResource("BoxShape3D_ry2q0")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KillZone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0555327, 0)
 shape = SubResource("BoxShape3D_cy8sb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ixiiy")
+}
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_u0o45")
+hframes = 3
+vframes = 3
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/shadow_pumpkin.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "61cd3ca016debc21a5971b9d9057e6dc"
 
 [connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]

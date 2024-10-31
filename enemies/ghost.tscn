@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://oo3c0v3ygmv0"]
+[gd_scene load_steps=8 format=3 uid="uid://oo3c0v3ygmv0"]
 
 [ext_resource type="Script" path="res://enemies/ghost.gd" id="1_k2ntb"]
+[ext_resource type="Texture2D" uid="uid://d4loyode15wn6" path="res://enemies/ghost.png" id="2_wy8wp"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_hxokx"]
 
@@ -10,11 +11,33 @@ radius = 6.82411
 [sub_resource type="SphereShape3D" id="SphereShape3D_kcbnn"]
 radius = 0.146237
 
+[sub_resource type="Animation" id="Animation_ciooj"]
+length = 0.747
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.083, 0.166, 0.249, 0.332, 0.415, 0.498, 0.581, 0.664),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t25ck"]
+_data = {
+"default": SubResource("Animation_ciooj")
+}
+
 [node name="Ghost" type="Node3D"]
 script = ExtResource("1_k2ntb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+visible = false
 mesh = SubResource("SphereMesh_hxokx")
 
 [node name="awaken_zone" type="Area3D" parent="."]
@@ -26,6 +49,36 @@ shape = SubResource("SphereShape3D_ma76x")
 
 [node name="body_zone" type="CollisionShape3D" parent="body_zone"]
 shape = SubResource("SphereShape3D_kcbnn")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+cast_shadow = 0
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_wy8wp")
+hframes = 3
+vframes = 3
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/ghost.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "818322614b8b04a5656b685903aa8598"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_t25ck")
+}
 
 [connection signal="body_entered" from="awaken_zone" to="." method="_on_awaken_zone_body_entered"]
 [connection signal="body_entered" from="body_zone" to="." method="_on_body_zone_body_entered"]
