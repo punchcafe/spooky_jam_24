@@ -1,0 +1,150 @@
+[gd_scene load_steps=9 format=3 uid="uid://ygqvjjnyur1d"]
+
+[sub_resource type="Environment" id="Environment_m372k"]
+background_mode = 1
+background_color = Color(0.0888731, 0.0129215, 0.31423, 1)
+ambient_light_energy = 2.58
+fog_enabled = true
+fog_light_color = Color(0.161142, 0.126448, 0.377325, 1)
+fog_light_energy = 0.5
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1rtdn"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_igrpm"]
+size = Vector2(1000, 1000)
+
+[sub_resource type="FogMaterial" id="FogMaterial_pu1ne"]
+density = 0.05
+albedo = Color(0.514379, 0.524941, 0.97526, 1)
+edge_fade = 5.21103
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_28g4o"]
+top_radius = 0.01
+bottom_radius = 3.0
+height = 40.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_suibs"]
+top_radius = 1.135
+bottom_radius = 1.77
+height = 10.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_phwc7"]
+size = Vector3(20, 13, 20)
+
+[sub_resource type="PrismMesh" id="PrismMesh_4bvb3"]
+size = Vector3(22, 8, 22)
+
+[node name="OutsideScene" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 40, -100)
+cull_mask = 8
+environment = SubResource("Environment_m372k")
+current = true
+fov = 33.0
+near = 0.034
+far = 500.0
+
+[node name="Tower" type="MeshInstance3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, 40, 0, 0, 0, 20, 0, 15.9918, 0)
+layers = 8
+mesh = SubResource("CylinderMesh_1rtdn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.476672, -0.144942, -0.86705, -0.413253, -0.907481, -0.075491, -0.77589, 0.394296, -0.492469, 0, 116.765, 0)
+layers = 8
+light_energy = 0.145
+light_cull_mask = 4293918728
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+layers = 9
+mesh = SubResource("PlaneMesh_igrpm")
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.5601, 0)
+visible = false
+layers = 8
+size = Vector3(500, 94.31, 500)
+material = SubResource("FogMaterial_pu1ne")
+
+[node name="Tree" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.1631, 27.1827, 29.0326)
+layers = 9
+mesh = SubResource("CylinderMesh_28g4o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tree"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.9188, 0)
+layers = 9
+mesh = SubResource("CylinderMesh_suibs")
+
+[node name="Tree2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.4812, 27.1827, -19.3962)
+layers = 8
+mesh = SubResource("CylinderMesh_28g4o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tree2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.9188, 0)
+layers = 8
+mesh = SubResource("CylinderMesh_suibs")
+
+[node name="Tree3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9272, 27.1827, -5.14323)
+layers = 8
+mesh = SubResource("CylinderMesh_28g4o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tree3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.9188, 0)
+layers = 8
+mesh = SubResource("CylinderMesh_suibs")
+
+[node name="Tree4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0345, 27.1827, -5.14323)
+layers = 8
+mesh = SubResource("CylinderMesh_28g4o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tree4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.9188, 0)
+layers = 8
+mesh = SubResource("CylinderMesh_suibs")
+
+[node name="house" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 43.503, 7.90619, 12.6264)
+layers = 8
+mesh = SubResource("BoxMesh_phwc7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="house"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.51804, 0)
+layers = 8
+mesh = SubResource("PrismMesh_4bvb3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="house"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.72186, 0, -12.1857)
+layers = 9
+light_color = Color(1, 0.72549, 0.2, 1)
+light_energy = 2.492
+light_indirect_energy = 3.83
+light_volumetric_fog_energy = 10.569
+light_size = 0.325
+light_cull_mask = 4294967291
+
+[node name="house2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 31.5101, 7.90619, 20.4125)
+layers = 8
+mesh = SubResource("BoxMesh_phwc7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="house2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.51804, 0)
+layers = 8
+mesh = SubResource("PrismMesh_4bvb3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="house2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.72186, 0, -12.1857)
+layers = 9
+light_color = Color(1, 0.72549, 0.2, 1)
+light_energy = 2.492
+light_indirect_energy = 3.83
+light_volumetric_fog_energy = 10.569
+light_size = 0.325
+light_cull_mask = 4294967291

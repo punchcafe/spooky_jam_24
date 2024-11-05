@@ -14,7 +14,6 @@
 
 [sub_resource type="Environment" id="Environment_xfckt"]
 background_mode = 1
-background_color = Color(0.0454565, 3.88054e-05, 0.167646, 1)
 background_energy_multiplier = 1.42
 ambient_light_source = 3
 fog_enabled = true

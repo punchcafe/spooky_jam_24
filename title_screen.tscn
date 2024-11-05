@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0m4hkygpqsvg"]
+
+[ext_resource type="Script" path="res://title_screen.gd" id="1_78x4j"]
+[ext_resource type="PackedScene" uid="uid://ygqvjjnyur1d" path="res://outside_scene.tscn" id="2_32paw"]
+
+[node name="TitleScreen" type="Node3D"]
+script = ExtResource("1_78x4j")
+
+[node name="OutsideScene" parent="." instance=ExtResource("2_32paw")]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 1012.0
+offset_top = 641.0
+offset_right = 3721.0
+offset_bottom = 2325.0
+theme_override_font_sizes/normal_font_size = 400
+text = "PUMPKIN 	
+  CROWN"

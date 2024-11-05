@@ -85,8 +85,8 @@ func _double_jump():
 	_jump()
 	
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("exit_game"):
-		get_tree().quit()
+	if Input.is_action_just_pressed("exit_game"):
+		get_tree().change_scene_to_file("res://title_screen.tscn")
 	_choose_animation(delta)
 	
 	#pass

@@ -46,5 +46,5 @@ func _enable_restart_game():
 	self._awaiting_input = true
 
 func _restart_game():
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://title_screen.tscn")
 	
