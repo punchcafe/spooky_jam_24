@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://421gwhd0y77s"]
+
+[ext_resource type="PackedScene" uid="uid://ygqvjjnyur1d" path="res://outside_scene.tscn" id="1_0kabx"]
+[ext_resource type="Script" path="res://credits_menu.gd" id="2_o51n3"]
+
+[node name="Credits" type="Node3D"]
+
+[node name="OutsideScene" parent="." instance=ExtResource("1_0kabx")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_o51n3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 209.0
+offset_right = 708.0
+offset_bottom = 303.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Boma + Luca"
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 5.956
+anchor_bottom = 3.146
+offset_left = 420.0
+offset_top = 327.0
+offset_right = 416.76
+offset_bottom = 325.16
+text = "Back
+"
+
+[connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]
