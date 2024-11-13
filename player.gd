@@ -5,6 +5,9 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 9.0
 const RADIUS = 9.5
 const RADIUS_SQUARED = RADIUS ** 2
+const DEBUG_END_ZONE_HEIGHT := 45.0
+
+@export var start_at_end := false
 
 var currently_awaiting_animation := false
 var theta := 0.0
@@ -41,6 +44,10 @@ func theta_change(delta: float):
 		return 0.5 * delta
 	else:
 		return 0.0
+		
+func _ready():
+	if self.start_at_end:
+		self.position.y = DEBUG_END_ZONE_HEIGHT
 	
 
 func _physics_process(delta: float) -> void:
