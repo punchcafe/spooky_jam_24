@@ -8,7 +8,10 @@ var _finishing_camera : Camera3D
 func _ready() -> void:
 	self._finishing_camera = get_node("MeshInstance3D/Camera3D") as Camera3D
 	var animation_player := $ClockMesh.get_node("AnimationPlayer") as AnimationPlayer
+	var animation_player_2 := $ClockMesh.get_node("ClockMesh2/AnimationPlayer") as AnimationPlayer
+	# Update when we have a single asset
 	animation_player.play("clockloopreverse")
+	animation_player_2.play("clockloopreverse")
 	# TODO: fix this code
 	animation_player = $OutsideScene.get_node("ClockFaceMesh/AnimationPlayer") as AnimationPlayer
 	animation_player.play("clockloopreverse")

@@ -46,6 +46,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 48.5, -9)
 [node name="ClockMesh" parent="." instance=ExtResource("2_yaaq5")]
 transform = Transform3D(1.22, 0, 0, 0, -5.33279e-08, -1.22, 0, 1.22, -5.33279e-08, 0, 48.5, -9.5)
 
+[node name="ClockMesh2" parent="ClockMesh" instance=ExtResource("2_yaaq5")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, -3.55271e-15, -4.23516e-22, -3.55271e-15, 1, 0, -0.435781, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ClockMesh"]
+transform = Transform3D(-0.819672, 5.64686e-08, 7.16467e-08, -7.22632e-08, -0.00901171, -0.819623, -5.56775e-08, -0.819623, 0.00901171, 1.13918e-07, -1.56161, -0.0434914)
+layers = 3
+light_energy = 3.778
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="ClockMesh"]
+transform = Transform3D(-0.819672, 5.64686e-08, 7.16467e-08, -7.22632e-08, -0.00901171, -0.819623, -5.56775e-08, -0.819623, 0.00901171, -1.88369e-07, 1.05336, -0.0978394)
+layers = 2
+light_energy = 8.97
+light_indirect_energy = 0.0
+
 [node name="OutsideScene" parent="." instance=ExtResource("3_trfde")]
+visible = false
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
