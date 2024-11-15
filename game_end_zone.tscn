@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0qe6hxvf1nif"]
+[gd_scene load_steps=7 format=3 uid="uid://d0qe6hxvf1nif"]
 
 [ext_resource type="Script" path="res://game_end_zone.gd" id="1_pa84y"]
 [ext_resource type="PackedScene" uid="uid://bml0kafwr0lc0" path="res://clock_face.tscn" id="2_yaaq5"]
+[ext_resource type="PackedScene" uid="uid://ygqvjjnyur1d" path="res://outside_scene.tscn" id="3_trfde"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_07nbl"]
 emission_enabled = true
@@ -28,8 +29,9 @@ mesh = SubResource("CylinderMesh_j125h")
 skeleton = NodePath("../..")
 
 [node name="Camera3D" type="Camera3D" parent="MeshInstance3D"]
-transform = Transform3D(-1, 0, -8.74227e-08, 8.74228e-08, -4.37114e-08, -1, -3.82137e-15, -1, 4.37114e-08, 0, -4.00047, 0)
+transform = Transform3D(-1, -2.5411e-21, -8.74228e-08, 8.74228e-08, -4.37114e-08, -1, -3.82137e-15, -1, 4.37114e-08, 0, -4.00047, 0)
 cull_mask = 524291
+far = 500.0
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4585, 44.5705, -7.34435)
@@ -41,20 +43,9 @@ shape = SubResource("BoxShape3D_pv16p")
 [node name="CameraAnchor" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 48.5, -9)
 
-[node name="blockbench_export" parent="." instance=ExtResource("2_yaaq5")]
+[node name="ClockMesh" parent="." instance=ExtResource("2_yaaq5")]
 transform = Transform3D(1.22, 0, 0, 0, -5.33279e-08, -1.22, 0, 1.22, -5.33279e-08, 0, 48.5, -9.5)
 
-[node name="blockbench_export2" parent="." instance=ExtResource("2_yaaq5")]
-transform = Transform3D(-1.22, -1.06656e-07, 4.66207e-15, 0, -5.33279e-08, -1.22, 1.06656e-07, -1.22, 5.33279e-08, 0, 48.5, -10.0011)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 48.5, -7.5)
-light_energy = 3.778
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 48.5, -12.4423)
-layers = 2
-light_energy = 8.97
-light_indirect_energy = 0.0
+[node name="OutsideScene" parent="." instance=ExtResource("3_trfde")]
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

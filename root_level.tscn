@@ -37,7 +37,7 @@ height_falloff = 1e-05
 [node name="Origin" type="Node3D"]
 
 [node name="player" parent="." instance=ExtResource("1_j4knv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 2.86379, 0)
+start_at_end = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_xfckt")

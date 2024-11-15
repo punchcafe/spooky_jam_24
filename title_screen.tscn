@@ -70,7 +70,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
 [node name="GameStartCameraPosition" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96991, 15.1457, -35.8718)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96991, 1.1457, -10.8718)
 
 [connection signal="pressed" from="StartingMenu/VBoxContainer/HBoxContainer/StartButton" to="StartingMenu" method="_on_start_button_pressed"]
 [connection signal="pressed" from="StartingMenu/VBoxContainer/HBoxContainer/Credits" to="StartingMenu" method="_on_credits_pressed"]

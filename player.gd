@@ -48,6 +48,7 @@ func theta_change(delta: float):
 func _ready():
 	if self.start_at_end:
 		self.position.y = DEBUG_END_ZONE_HEIGHT
+	$Camera3D.current = true
 	
 
 func _physics_process(delta: float) -> void:
