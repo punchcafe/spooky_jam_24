@@ -37,7 +37,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		tween.tween_property(_finishing_camera, "rotation", Vector3(PI/2, PI, 0), 0.5)
 		tween.tween_callback(_only_show_clock)
 		tween.chain()
-		tween.tween_property(_finishing_camera, "position", Vector3(0, -15, 0), 2)
+		tween.tween_property(_finishing_camera, "position", Vector3(0, -15, 0), 8)
 		tween.chain()
 		tween.tween_callback(_enable_restart_game)
 
