@@ -13,6 +13,7 @@ var currently_awaiting_animation := false
 var theta := 0.0
 var double_jumped = false
 var _is_player_dying := false
+var _invincible := false
 
 var _callback = null
 
@@ -24,8 +25,11 @@ func current_delta():
 func player_character():
 	pass
 	
+func make_invincible():
+	self._invincible = true
+	
 func die():
-	if _is_player_dying:
+	if _is_player_dying or _invincible:
 		return
 	_is_player_dying = true
 	$AnimationPlayer.stop()

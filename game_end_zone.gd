@@ -27,6 +27,7 @@ func _process(delta: float) -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if is_instance_of(body, Player):
 		var player := body as Player
+		player.make_invincible()
 		self._player = player
 		var player_camera := player.get_node("./Camera3D") as Camera3D
 		_finishing_camera.set_global_transform(player_camera.global_transform)
@@ -42,7 +43,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		tween.tween_callback(_enable_restart_game)
 
 func _only_show_clock():
-	self._player.queue_free()
 	_finishing_camera.set_cull_mask_value(1, false)
 
 func _enable_restart_game():
