@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bi010r54j6p82"]
+[gd_scene load_steps=16 format=3 uid="uid://bi010r54j6p82"]
 
 [ext_resource type="PackedScene" uid="uid://biaidqh46uhsm" path="res://player.tscn" id="1_j4knv"]
 [ext_resource type="Script" path="res://mist.gd" id="2_kyo8u"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://d0qe6hxvf1nif" path="res://game_end_zone.tscn" id="8_ui7x1"]
 [ext_resource type="PackedScene" uid="uid://ctw4s4vviifya" path="res://Models/spookyjam_walls_extra.gltf" id="9_kq8vb"]
 [ext_resource type="PackedScene" uid="uid://dnw23qfahu3rt" path="res://torch.tscn" id="11_y0ky4"]
+[ext_resource type="PackedScene" uid="uid://bejmh15ky6uyo" path="res://bgm_manager.tscn" id="12_migj7"]
 
 [sub_resource type="Environment" id="Environment_xfckt"]
 background_mode = 1
@@ -932,5 +933,7 @@ transform = Transform3D(-0.299807, 0, -0.954, 0, 1, 0, 0.954, 0, -0.299807, 0, 1
 
 [node name="TorchAnchor6" parent="." instance=ExtResource("11_y0ky4")]
 transform = Transform3D(-0.0841129, 0, 0.996456, 0, 1, 0, -0.996456, 0, -0.0841129, 0, 12.2195, 0)
+
+[node name="BGMManager" parent="." instance=ExtResource("12_migj7")]
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

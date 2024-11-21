@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://bejmh15ky6uyo"]
+
+[ext_resource type="Script" path="res://bgm_manager.gd" id="1_c5ldv"]
+[ext_resource type="AudioStream" uid="uid://dj4yqsn5is64f" path="res://sounds/SJ_BGM_00_intro.wav" id="2_f081l"]
+[ext_resource type="AudioStream" uid="uid://ujcd0k273l60" path="res://sounds/SJ_BGM_01_light_loop.wav" id="3_hgpkx"]
+[ext_resource type="AudioStream" uid="uid://bihhojpffxn5d" path="res://sounds/SJ_BGM_02_med_loop.wav" id="4_qrcww"]
+[ext_resource type="AudioStream" uid="uid://dwddl14qe2532" path="res://sounds/SJ_BGM_03_heavy_loop.wav" id="5_h0x3a"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_yxvpn"]
+stream_count = 3
+stream_0/stream = ExtResource("3_hgpkx")
+stream_0/volume = 1.0
+stream_1/stream = ExtResource("4_qrcww")
+stream_1/volume = -60.0
+stream_2/stream = ExtResource("5_h0x3a")
+stream_2/volume = -60.0
+
+[node name="BGMManager" type="Node"]
+script = ExtResource("1_c5ldv")
+
+[node name="IntroPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_f081l")
+autoplay = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamSynchronized_yxvpn")
+
+[connection signal="finished" from="IntroPlayer" to="." method="_on_intro_player_finished"]
