@@ -17,7 +17,10 @@ config/icon="res://game-icon.png"
 
 [display]
 
+window/size/viewport_height=540
 window/size/mode=3
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
 
 [dotnet]
 

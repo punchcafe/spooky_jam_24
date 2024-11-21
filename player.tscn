@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://biaidqh46uhsm"]
+[gd_scene load_steps=18 format=3 uid="uid://biaidqh46uhsm"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_8idxh"]
 [ext_resource type="Texture2D" uid="uid://cfbbfi26ly64t" path="res://pumpkin_thief.png" id="2_6o3cr"]
+[ext_resource type="Shader" path="res://crt.gdshader" id="2_kvp8e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w6dwc"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -9,6 +10,23 @@ size = Vector3(0.5, 0.5, 0.5)
 [sub_resource type="BoxMesh" id="BoxMesh_fxr3r"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_6ov6l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_00qk3"]
+shader = ExtResource("2_kvp8e")
+shader_parameter/resolution = Vector2(550, 360)
+shader_parameter/scan_line_amount = 1.0
+shader_parameter/warp_amount = 0.1
+shader_parameter/noise_amount = 0.073
+shader_parameter/interference_amount = 0.832
+shader_parameter/grille_amount = 0.141
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.874
+shader_parameter/vignette_intensity = 0.711
+shader_parameter/aberation_amount = 0.5
+shader_parameter/roll_line_amount = 0.244
+shader_parameter/roll_speed = -0.985
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = -4.0
 
 [sub_resource type="Animation" id="Animation_3m7d0"]
 length = 1.225
@@ -182,6 +200,16 @@ mesh = SubResource("BoxMesh_fxr3r")
 transform = Transform3D(-4.34303e-08, 0.113221, 0.99357, 4.94903e-09, 0.99357, -0.113221, -1, -2.63055e-15, -4.37114e-08, 2.61814, 0.249611, 0)
 cull_mask = 3
 attributes = SubResource("CameraAttributesPractical_6ov6l")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera3D"]
+
+[node name="ColorRect" type="ColorRect" parent="Camera3D/CanvasLayer"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_00qk3")
+offset_right = 1162.0
+offset_bottom = 663.0
+color = Color(0, 0, 0, 1)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_color = Color(0.625055, 0.369082, 1, 1)
