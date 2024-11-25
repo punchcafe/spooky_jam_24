@@ -1,7 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://421gwhd0y77s"]
+[gd_scene load_steps=5 format=3 uid="uid://421gwhd0y77s"]
 
 [ext_resource type="PackedScene" uid="uid://ygqvjjnyur1d" path="res://outside_scene.tscn" id="1_0kabx"]
 [ext_resource type="Script" path="res://credits_menu.gd" id="2_o51n3"]
+[ext_resource type="Shader" path="res://crt.gdshader" id="3_1b5qs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wqvfd"]
+shader = ExtResource("3_1b5qs")
+shader_parameter/resolution = Vector2(550, 360)
+shader_parameter/scan_line_amount = 1.0
+shader_parameter/warp_amount = 0.1
+shader_parameter/noise_amount = 0.073
+shader_parameter/interference_amount = 0.832
+shader_parameter/grille_amount = 0.141
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.874
+shader_parameter/vignette_intensity = 0.711
+shader_parameter/aberation_amount = 0.099
+shader_parameter/roll_line_amount = 0.244
+shader_parameter/roll_speed = -0.985
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = -4.0
 
 [node name="Credits" type="Node3D"]
 
@@ -34,5 +52,14 @@ offset_right = 416.76
 offset_bottom = 325.16
 text = "Back
 "
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_wqvfd")
+layout_mode = 0
+offset_right = 1162.0
+offset_bottom = 663.0
+color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]
