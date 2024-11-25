@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bi010r54j6p82"]
+[gd_scene load_steps=17 format=3 uid="uid://bi010r54j6p82"]
 
 [ext_resource type="PackedScene" uid="uid://biaidqh46uhsm" path="res://player.tscn" id="1_j4knv"]
 [ext_resource type="Script" path="res://mist.gd" id="2_kyo8u"]
 [ext_resource type="PackedScene" uid="uid://dy0qjs0n5tht4" path="res://platforms/platform.tscn" id="3_p45ck"]
+[ext_resource type="Script" path="res://feu_follet.gd" id="4_2lvy0"]
 [ext_resource type="PackedScene" uid="uid://oo3c0v3ygmv0" path="res://enemies/ghost.tscn" id="4_ob6w3"]
 [ext_resource type="PackedScene" uid="uid://b6wxrdseugf7c" path="res://platforms/crumble_platform.tscn" id="5_esrli"]
 [ext_resource type="PackedScene" uid="uid://pcp3ity8cgit" path="res://platforms/moving_platform.tscn" id="6_2w3qf"]
@@ -92,22 +93,81 @@ transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 0,
 [node name="StaticBody3D9" parent="Ring/Path4" instance=ExtResource("3_p45ck")]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 0.43, 0)
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Fog" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -23.4177, 0)
 script = ExtResource("2_kyo8u")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fog"]
 shape = SubResource("BoxShape3D_o1imb")
 
-[node name="FogVolume" type="FogVolume" parent="Area3D"]
+[node name="FogVolume" type="FogVolume" parent="Fog"]
 size = Vector3(22, 22, 22)
 shape = 2
 material = SubResource("FogMaterial_dhg66")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.80386, 3.37411)
-light_energy = 3.315
+[node name="FeuFollet" type="OmniLight3D" parent="Fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93097, 7.68031, -3.32956)
+light_energy = 5.433
+script = ExtResource("4_2lvy0")
+x_delta = 5.0
+y_delta = 2.0
+z_delta = 3.0
+brightness_delta = 3.0
+
+[node name="FeuFollet4" type="OmniLight3D" parent="Fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01013, 6.70255, -4.7962)
+light_energy = 7.59
+script = ExtResource("4_2lvy0")
+x_delta = 2.0
+y_delta = 5.0
+z_delta = 3.0
+brightness_delta = 5.0
+
+[node name="FeuFollet7" type="OmniLight3D" parent="Fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85281, 4.85594, -4.7962)
+light_energy = 7.59
+script = ExtResource("4_2lvy0")
+x_delta = 2.0
+y_delta = 5.0
+z_delta = 3.0
+brightness_delta = 5.0
+
+[node name="FeuFollet2" type="OmniLight3D" parent="Fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35339, 8.77404, 3.97175)
+light_energy = 2.195
 light_negative = true
+script = ExtResource("4_2lvy0")
+x_delta = 5.0
+z_delta = 5.0
+
+[node name="FeuFollet3" type="OmniLight3D" parent="Fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60449, 8.9376, 4.50549)
+light_energy = 2.195
+light_negative = true
+script = ExtResource("4_2lvy0")
+x_delta = 2.0
+y_delta = 10.0
+z_delta = 2.0
+
+[node name="FeuFollet5" type="OmniLight3D" parent="Fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.67572, 2.85494, 0.510976)
+light_energy = 11.988
+light_negative = true
+script = ExtResource("4_2lvy0")
+phase = 1.0
+x_delta = 2.0
+y_delta = 10.0
+z_delta = 2.0
+
+[node name="FeuFollet6" type="OmniLight3D" parent="Fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.69744, 6.06863, -1.4723)
+light_energy = 11.988
+light_negative = true
+script = ExtResource("4_2lvy0")
+phase = 1.0
+x_delta = 2.0
+y_delta = 3.0
+z_delta = 2.0
 
 [node name="Ghost" parent="." instance=ExtResource("4_ob6w3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.658, 9.5)
@@ -936,4 +996,4 @@ transform = Transform3D(-0.0841129, 0, 0.996456, 0, 1, 0, -0.996456, 0, -0.08411
 
 [node name="BGMManager" parent="." instance=ExtResource("12_migj7")]
 
-[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="Fog" to="Fog" method="_on_body_entered"]
