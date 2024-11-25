@@ -14,8 +14,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if not _hunt_started:
 		return
-	var new_transparency = max($Sprite3D.transparency - (delta * 0.4), 0.4)
+	var new_transparency = max($Sprite3D.transparency - (delta * 2), 0)
 	$Sprite3D.transparency = new_transparency
+	$Sprite3D.alpha_cut = SpriteBase3D.AlphaCutMode.ALPHA_CUT_OPAQUE_PREPASS
 	var rot_movement = clamp(_rotation_between_ghost_and_player(), -1 * MAX_MOVEMENT, MAX_MOVEMENT)
 	_set_animation_direction(rot_movement)
 	var new_rotation_position = AngularMotionUtils.vec3_from_rotation(current_rotation() + -1 * (rot_movement * delta), 9.5)
