@@ -14,6 +14,7 @@ var theta := 0.0
 var double_jumped = false
 var _is_player_dying := false
 var _invincible := false
+var _previous_is_on_floor := false
 
 var _callback = null
 
@@ -34,6 +35,7 @@ func die():
 	_is_player_dying = true
 	$AnimationPlayer.stop()
 	$AnimationPlayer.queue("dying")
+	$SoundFXPlayer.play_die()
 	self._callback = self.end_game
 
 func end_game():
@@ -60,6 +62,12 @@ func _physics_process(delta: float) -> void:
 	var new_velocity = difference / delta # Do this so that it moves the entire way in the delta
 	velocity.x = new_velocity.x
 	velocity.z = new_velocity.z
+
+	var just_landed = is_on_floor() and not self._previous_is_on_floor
+	self._previous_is_on_floor = is_on_floor()
+	
+	if just_landed:
+		$SoundFXPlayer.play_land()
 
 	# Add the gravity.
 	if not is_on_floor():
@@ -90,6 +98,7 @@ func _restorative_distance() -> Vector3:
 		return difference * -1
 
 func _jump():
+	$SoundFXPlayer.play_jump()
 	velocity.y = JUMP_VELOCITY
 	
 func _double_jump():
