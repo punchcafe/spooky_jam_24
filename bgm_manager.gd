@@ -13,6 +13,11 @@ func _ready() -> void:
 	_set_new_stream(0)
 
 func _process(delta: float) -> void:
+	# Version 1 which overrides on completion
+	# if _is_player_in_finish_zone() and not $OutroStreamPlayer.playing:
+	# 	$IntroPlayer.stop()
+	#	$AudioStreamPlayer.stop()
+	#	$OutroStreamPlayer.play()
 	var next_height_index = height_index()
 	if next_height_index > _last_height_index:
 		# This also adds the effect of not going back
@@ -38,3 +43,14 @@ func height_index():
 
 func _on_intro_player_finished() -> void:
 	$AudioStreamPlayer.play()
+	
+func _is_player_in_finish_zone():
+	## convenience hack, relying on invincible to only occur in finish zone.
+	return self._player._invincible
+	
+
+func _loop_finished() -> void:
+	if _is_player_in_finish_zone():
+		$OutroStreamPlayer.play()
+	else:
+		$AudioStreamPlayer.play()
