@@ -29,6 +29,7 @@ func _inject_crumble_zone(node: Node3D):
 func _body_entered_crumble_zone(body: Node):
 	if PlayerReactions.is_player(body):
 		self._is_crumbling = true
+		$AudioStreamPlayer3D.play()
 
 	
 func _process(delta: float) -> void:
