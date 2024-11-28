@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://sound_fx_player.gd" id="4_runl5"]
 [ext_resource type="AudioStream" uid="uid://m7c5nngpe7hw" path="res://sounds/SJ_Jump.wav" id="5_2e1wm"]
 [ext_resource type="AudioStream" uid="uid://1hgnilsdaxf7" path="res://sounds/SJ_Land.wav" id="6_ljxn6"]
-[ext_resource type="AudioStream" uid="uid://dhrrms5bmbgqr" path="res://sounds/SJ_Death.wav" id="7_lt14w"]
+[ext_resource type="AudioStream" uid="uid://54rsx00e18ad" path="res://sounds/SJ_Death_NoJingle.wav" id="7_myljh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w6dwc"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -264,7 +264,7 @@ stream = ExtResource("6_ljxn6")
 volume_db = 5.0
 
 [node name="DieFXPlayer" type="AudioStreamPlayer" parent="SoundFXPlayer"]
-stream = ExtResource("7_lt14w")
+stream = ExtResource("7_myljh")
 volume_db = 5.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
