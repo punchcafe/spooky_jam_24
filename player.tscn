@@ -12,6 +12,7 @@ size = Vector3(0.5, 0.5, 0.5)
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_6ov6l"]
 dof_blur_far_enabled = true
 dof_blur_far_distance = 6.62
+dof_blur_amount = 0.02
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_00qk3"]
 shader = ExtResource("2_kvp8e")

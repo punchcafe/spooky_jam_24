@@ -4,32 +4,26 @@
 
 [node name="blockbench_export" instance=ExtResource("1_owr26")]
 
-[node name="middlecircle" parent="Node/Clockface" index="0"]
-layers = 2
-
-[node name="clockbase" parent="Node/Clockface" index="1"]
-layers = 2
-
-[node name="smallarrow" parent="Node/Clockface" index="2"]
-transform = Transform3D(0.999048, 0, 0.0436194, 0, 1, 0, -0.0436194, 0, 0.999048, -8.32667e-17, 0.25, 0.0204281)
-
-[node name="arrowsmall" parent="Node/Clockface/smallarrow" index="0"]
-layers = 2
-
-[node name="bigarrow" parent="Node/Clockface" index="3"]
-transform = Transform3D(1, 0, -2.44929e-16, 0, 1, 0, 2.44929e-16, 0, 1, -8.32667e-17, 0.25, 0.0204281)
+[node name="bigarrow" parent="Node/Clockface" index="0"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -8.32667e-17, 0.25, 0.0204281)
 
 [node name="arrow" parent="Node/Clockface/bigarrow" index="0"]
 layers = 2
 
-[node name="clockbase2" parent="Node/Clockface2" index="0"]
+[node name="smallarrow" parent="Node/Clockface" index="1"]
+transform = Transform3D(0.803055, 0, 0.595905, 0, 1, 0, -0.595905, 0, 0.803055, -8.32667e-17, 0.25, 0.0204281)
+
+[node name="arrowsmall" parent="Node/Clockface/smallarrow" index="0"]
 layers = 2
 
-[node name="arrowsmall2" parent="Node/Clockface2" index="1"]
+[node name="clockbase" parent="Node/Clockface" index="2"]
+layers = 2
+
+[node name="middlecircle" parent="Node/Clockface" index="3"]
+layers = 2
+
+[node name="clockbase2" parent="Node/Clockface2" index="1"]
 layers = 2
 
 [node name="middlecircle2" parent="Node/Clockface2" index="2"]
-layers = 2
-
-[node name="arrow2" parent="Node/Clockface2" index="3"]
 layers = 2
