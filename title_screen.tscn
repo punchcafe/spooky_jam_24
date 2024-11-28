@@ -39,7 +39,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_nkbl4")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="StartingMenu"]
+[node name="Credits" type="Control" parent="StartingMenu"]
+visible = false
+anchors_preset = 0
+offset_right = 45.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="StartingMenu/Credits"]
+layout_mode = 2
+offset_right = 623.0
+offset_bottom = 248.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Boma + Luca"
+
+[node name="Button" type="Button" parent="StartingMenu/Credits"]
+layout_mode = 2
+offset_left = 83.0
+offset_top = 272.0
+offset_right = 271.0
+offset_bottom = 440.0
+text = "Back
+"
+
+[node name="TitleScreen" type="VBoxContainer" parent="StartingMenu"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -51,17 +73,17 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="StartingMenu/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="StartingMenu/TitleScreen"]
 layout_mode = 2
 texture = ExtResource("3_7jrex")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="HBoxContainer" type="VBoxContainer" parent="StartingMenu/VBoxContainer"]
+[node name="HBoxContainer" type="VBoxContainer" parent="StartingMenu/TitleScreen"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="StartButton" type="Button" parent="StartingMenu/VBoxContainer/HBoxContainer"]
+[node name="StartButton" type="Button" parent="StartingMenu/TitleScreen/HBoxContainer"]
 layout_mode = 2
 focus_neighbor_right = NodePath("../Credits")
 theme = ExtResource("4_lj7ap")
@@ -69,7 +91,7 @@ theme_type_variation = &"FlatButton"
 theme_override_font_sizes/font_size = 50
 text = "Start"
 
-[node name="Credits" type="Button" parent="StartingMenu/VBoxContainer/HBoxContainer"]
+[node name="Credits" type="Button" parent="StartingMenu/TitleScreen/HBoxContainer"]
 layout_mode = 2
 focus_neighbor_left = NodePath("../StartButton")
 theme = ExtResource("4_lj7ap")
@@ -77,21 +99,15 @@ theme_type_variation = &"FlatButton"
 theme_override_font_sizes/font_size = 50
 text = "Credits"
 
-[node name="Control" type="Control" parent="StartingMenu"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="BlackOverlay" type="ColorRect" parent="StartingMenu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 2.0
+offset_right = -1.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
@@ -116,5 +132,6 @@ stream = ExtResource("7_lj1q6")
 [node name="GameStartCameraPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96991, 1.1457, -10.8718)
 
-[connection signal="pressed" from="StartingMenu/VBoxContainer/HBoxContainer/StartButton" to="StartingMenu" method="_on_start_button_pressed"]
-[connection signal="pressed" from="StartingMenu/VBoxContainer/HBoxContainer/Credits" to="StartingMenu" method="_on_credits_pressed"]
+[connection signal="pressed" from="StartingMenu/Credits/Button" to="StartingMenu" method="_on_credits_back_button_pressed"]
+[connection signal="pressed" from="StartingMenu/TitleScreen/HBoxContainer/StartButton" to="StartingMenu" method="_on_start_button_pressed"]
+[connection signal="pressed" from="StartingMenu/TitleScreen/HBoxContainer/Credits" to="StartingMenu" method="_on_credits_pressed"]

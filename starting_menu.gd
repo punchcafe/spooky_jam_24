@@ -2,7 +2,7 @@ extends Control
 
 func _ready() -> void:
 	get_viewport().connect("gui_focus_changed", self._on_focus_changed)
-	get_node("VBoxContainer/HBoxContainer/StartButton").grab_focus()
+	get_node("TitleScreen/HBoxContainer/StartButton").grab_focus()
 
 func _on_focus_changed(_control):
 	$FocusChangedSound.play()
@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 
 
 func _on_start_button_pressed() -> void:
-	$VBoxContainer.queue_free()
+	$TitleScreen.queue_free()
 	var tween := get_tree().create_tween()
 	var tween_time = $GameStartSound.get_stream().get_length()
 	$GameStartSound.play()
@@ -29,4 +29,15 @@ func _on_start_button_pressed() -> void:
 
 
 func _on_credits_pressed() -> void:
-	get_tree().change_scene_to_file("res://credits.tscn") # Replace with function body.
+	_toggle_visibilities()
+
+func _on_credits_back_button_pressed() -> void:
+	_toggle_visibilities()
+
+func _toggle_visibilities() -> void:
+	$Credits.visible = not $Credits.visible
+	$TitleScreen.visible = not $TitleScreen.visible
+	if $TitleScreen.visible:
+		get_node("TitleScreen/HBoxContainer/StartButton").grab_focus()
+	else:
+		get_node("Credits/Button").grab_focus()
