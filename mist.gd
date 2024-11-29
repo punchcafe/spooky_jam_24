@@ -2,7 +2,10 @@ extends Area3D
 class_name Mist
 
 func _ready() -> void:
-	pass
+	if ProjectSettings.get_setting("rendering/renderer/rendering_method") == "forward_plus":
+		$FogTransparentMesh.queue_free()
+	else:
+		$FogVolume.queue_free()
 
 func _process(_delta: float) -> void:
 	position += Vector3(0, 0.02, 0)
