@@ -1,20 +1,34 @@
 extends Control
 
+var _current_focus_button : Button
+
 func _ready() -> void:
 	randomise_credits_order()
 	get_viewport().connect("gui_focus_changed", self._on_focus_changed)
-	get_node("TitleScreen/HBoxContainer/StartButton").grab_focus()
+	var start_button = get_node("TitleScreen/HBoxContainer/StartButton")
+	start_button.grab_focus()
+	$Cursor.global_position = start_button.global_position
 
-func _on_focus_changed(_control):
+func _on_focus_changed(control):
+	if is_instance_of(control, Button):
+		self._current_focus_button = control
+	else:
+		self._current_focus_button = null
 	$FocusChangedSound.play()
 
 func _process(delta: float) -> void:
+	if _current_focus_button: 
+		$Cursor.global_position = _current_focus_button.global_position \
+		+ Vector2(_current_focus_button.size.x / -2.0, 0) \
+		+ Vector2(-10.0, 0.0)
+		
 	if Input.is_action_just_pressed("exit_game"):
 		get_tree().quit()
 
 
 func _on_start_button_pressed() -> void:
-	$TitleScreen.queue_free()
+	$TitleScreen.visible = false
+	$Cursor.visible = false
 	var tween := get_tree().create_tween()
 	var tween_time = $GameStartSound.get_stream().get_length()
 	$GameStartSound.play()

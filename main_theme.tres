@@ -1,7 +1,19 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://kya88erdxydu"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://kya88erdxydu"]
 
 [ext_resource type="FontFile" uid="uid://dodjthsyn5pcw" path="res://assets/fonts/alkhemikal/Alkhemikal.ttf" id="1_hug1k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n2qrt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2yovl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nxfhr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o2sw2"]
 
 [resource]
 default_font = ExtResource("1_hug1k")
 default_font_size = 5
+Button/styles/focus = SubResource("StyleBoxEmpty_n2qrt")
+Button/styles/hover = SubResource("StyleBoxEmpty_2yovl")
+Button/styles/normal = SubResource("StyleBoxEmpty_nxfhr")
+Button/styles/pressed = SubResource("StyleBoxEmpty_o2sw2")
