@@ -20,9 +20,6 @@ var _to_transform : Transform3D
 
 func _ready() -> void:
 	_from_transform = _starting_transform()
-	print(initial_y)
-	print(angle_change)
-	print(initial_rotation_deg)
 	_to_transform = _destination_transform(_from_transform)
 	super()
 	
