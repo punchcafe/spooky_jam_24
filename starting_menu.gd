@@ -1,6 +1,7 @@
 extends Control
 
 func _ready() -> void:
+	randomise_credits_order()
 	get_viewport().connect("gui_focus_changed", self._on_focus_changed)
 	get_node("TitleScreen/HBoxContainer/StartButton").grab_focus()
 
@@ -40,4 +41,10 @@ func _toggle_visibilities() -> void:
 	if $TitleScreen.visible:
 		get_node("TitleScreen/HBoxContainer/StartButton").grab_focus()
 	else:
-		get_node("Credits/Button").grab_focus()
+		randomise_credits_order()
+		get_node("Credits/VBoxContainer/Button").grab_focus()
+		
+func randomise_credits_order() -> void:
+	if randi_range(0,9) >= 5:
+		var portrait_holder = $Credits.get_node("HBoxContainer")
+		portrait_holder.move_child(portrait_holder.get_child(0), 1)

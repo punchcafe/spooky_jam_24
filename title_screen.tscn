@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0m4hkygpqsvg"]
+[gd_scene load_steps=11 format=3 uid="uid://b0m4hkygpqsvg"]
 
 [ext_resource type="PackedScene" uid="uid://ygqvjjnyur1d" path="res://outside_scene.tscn" id="2_32paw"]
 [ext_resource type="Texture2D" uid="uid://d2ebvue1ox15j" path="res://title_font.png" id="3_7jrex"]
+[ext_resource type="Texture2D" uid="uid://bd14xbew6y3ui" path="res://assets/punchcafe_gb_portrait.png" id="3_fb6tt"]
 [ext_resource type="Script" path="res://starting_menu.gd" id="3_nkbl4"]
+[ext_resource type="Texture2D" uid="uid://bh35wevdg2cvx" path="res://assets/squirrel_sensei_gb_portrait.png" id="4_eb3jm"]
 [ext_resource type="Theme" uid="uid://kya88erdxydu" path="res://main_theme.tres" id="4_lj7ap"]
 [ext_resource type="Shader" path="res://crt.gdshader" id="4_qswy1"]
 [ext_resource type="AudioStream" uid="uid://8qri5f7n48rr" path="res://sounds/SJ_GameStart.wav" id="6_omc78"]
@@ -39,27 +41,65 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_nkbl4")
 
-[node name="Credits" type="Control" parent="StartingMenu"]
+[node name="Credits" type="VBoxContainer" parent="StartingMenu"]
 visible = false
-anchors_preset = 0
-offset_right = 45.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -322.0
+offset_right = 322.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopSpacer" type="Control" parent="StartingMenu/Credits"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="StartingMenu/Credits"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="StartingMenu/Credits/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+texture = ExtResource("3_fb6tt")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="StartingMenu/Credits/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_eb3jm")
+stretch_mode = 2
+
+[node name="MiddleSpacer" type="Control" parent="StartingMenu/Credits"]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="StartingMenu/Credits"]
 layout_mode = 2
-offset_right = 623.0
-offset_bottom = 248.0
-theme_override_font_sizes/normal_font_size = 50
-text = "Boma + Luca"
+theme = ExtResource("4_lj7ap")
+theme_override_font_sizes/normal_font_size = 30
+text = "Font:				Alkhemikal by Jeti
+CRT effect:		Realistic CRT Shader by c64cosmin"
+fit_content = true
 
-[node name="Button" type="Button" parent="StartingMenu/Credits"]
+[node name="VBoxContainer" type="VBoxContainer" parent="StartingMenu/Credits"]
 layout_mode = 2
-offset_left = 83.0
-offset_top = 272.0
-offset_right = 271.0
-offset_bottom = 440.0
+size_flags_horizontal = 8
+
+[node name="Button" type="Button" parent="StartingMenu/Credits/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_lj7ap")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 50
 text = "Back
 "
+
+[node name="BottomSpacer" type="Control" parent="StartingMenu/Credits"]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="TitleScreen" type="VBoxContainer" parent="StartingMenu"]
 layout_mode = 1
@@ -132,6 +172,6 @@ stream = ExtResource("7_lj1q6")
 [node name="GameStartCameraPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96991, 1.1457, -10.8718)
 
-[connection signal="pressed" from="StartingMenu/Credits/Button" to="StartingMenu" method="_on_credits_back_button_pressed"]
+[connection signal="pressed" from="StartingMenu/Credits/VBoxContainer/Button" to="StartingMenu" method="_on_credits_back_button_pressed"]
 [connection signal="pressed" from="StartingMenu/TitleScreen/HBoxContainer/StartButton" to="StartingMenu" method="_on_start_button_pressed"]
 [connection signal="pressed" from="StartingMenu/TitleScreen/HBoxContainer/Credits" to="StartingMenu" method="_on_credits_pressed"]
