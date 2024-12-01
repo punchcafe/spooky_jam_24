@@ -60,5 +60,5 @@ func _toggle_visibilities() -> void:
 		
 func randomise_credits_order() -> void:
 	if randi_range(0,9) >= 5:
-		var portrait_holder = $Credits.get_node("HBoxContainer")
+		var portrait_holder = $Credits.get_node("PortraitContainer")
 		portrait_holder.move_child(portrait_holder.get_child(0), 1)

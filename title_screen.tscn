@@ -68,21 +68,53 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="StartingMenu/Credits"]
+[node name="PortraitContainer" type="VBoxContainer" parent="StartingMenu/Credits"]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="TextureRect" type="TextureRect" parent="StartingMenu/Credits/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="StartingMenu/Credits/PortraitContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="StartingMenu/Credits/PortraitContainer/HBoxContainer"]
 clip_contents = true
 layout_mode = 2
 texture = ExtResource("3_fb6tt")
 stretch_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="StartingMenu/Credits/HBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="StartingMenu/Credits/PortraitContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_lj7ap")
+theme_override_font_sizes/italics_font_size = 20
+theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/bold_font_size = 35
+bbcode_enabled = true
+text = "
+	[b]punchcafe[/b]
+	Programming • 2D Assets • Game Design
+"
+text_direction = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="StartingMenu/Credits/PortraitContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="StartingMenu/Credits/PortraitContainer/HBoxContainer2"]
 layout_mode = 2
 texture = ExtResource("4_eb3jm")
 stretch_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="StartingMenu/Credits/PortraitContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_lj7ap")
+theme_override_font_sizes/italics_font_size = 20
+theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/bold_font_size = 35
+bbcode_enabled = true
+text = "
+	[b]SquirrelSensei[/b]
+	3D Assets • Game Design • Level Design • Music"
+text_direction = 1
 
 [node name="MiddleSpacer" type="Control" parent="StartingMenu/Credits"]
 layout_mode = 2
