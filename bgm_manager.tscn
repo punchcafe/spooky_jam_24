@@ -32,4 +32,3 @@ volume_db = -1.455
 stream = ExtResource("6_c4gso")
 
 [connection signal="finished" from="IntroPlayer" to="." method="_on_intro_player_finished"]
-[connection signal="finished" from="AudioStreamPlayer" to="." method="_loop_finished"]

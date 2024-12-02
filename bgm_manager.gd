@@ -7,17 +7,18 @@ const _PLAYING_VOLUME := 0.0
 var _last_height_index := 0
 var _finished_intro := false
 var _player : Player
+var _outro_playing := false
 
 func _ready() -> void:
 	self._player = get_node("../player") as Player
 	_set_new_stream(0)
 
 func _process(delta: float) -> void:
-	# Version 1 which overrides on completion
-	# if _is_player_in_finish_zone() and not $OutroStreamPlayer.playing:
-	# 	$IntroPlayer.stop()
-	#	$AudioStreamPlayer.stop()
-	#	$OutroStreamPlayer.play()
+	if _is_player_in_finish_zone() and not _outro_playing:
+		self._outro_playing = true
+		$IntroPlayer.stop()
+		$AudioStreamPlayer.stop()
+		$OutroStreamPlayer.play()
 	var next_height_index = height_index()
 	if next_height_index > _last_height_index:
 		# This also adds the effect of not going back
@@ -47,10 +48,3 @@ func _on_intro_player_finished() -> void:
 func _is_player_in_finish_zone():
 	## convenience hack, relying on invincible to only occur in finish zone.
 	return self._player._invincible
-	
-
-func _loop_finished() -> void:
-	if _is_player_in_finish_zone():
-		$OutroStreamPlayer.play()
-	else:
-		$AudioStreamPlayer.play()
