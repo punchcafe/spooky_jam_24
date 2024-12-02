@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://bi010r54j6p82"]
+[gd_scene load_steps=20 format=3 uid="uid://bi010r54j6p82"]
 
 [ext_resource type="PackedScene" uid="uid://biaidqh46uhsm" path="res://player.tscn" id="1_j4knv"]
+[ext_resource type="Script" path="res://world_environment.gd" id="2_0vq8k"]
 [ext_resource type="Script" path="res://mist.gd" id="2_kyo8u"]
 [ext_resource type="PackedScene" uid="uid://dy0qjs0n5tht4" path="res://platforms/platform.tscn" id="3_p45ck"]
 [ext_resource type="Script" path="res://feu_follet.gd" id="4_2lvy0"]
@@ -53,6 +54,7 @@ height = 100.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_xfckt")
+script = ExtResource("2_0vq8k")
 
 [node name="Ring" type="Node3D" parent="."]
 
