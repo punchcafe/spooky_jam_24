@@ -1,0 +1,107 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwn805ots7edj"]
+
+[ext_resource type="PackedScene" uid="uid://cglqdhomm8sd3" path="res://Models/spookyjam_titlescreen.gltf" id="1_3fgru"]
+
+[node name="blockbench_export" instance=ExtResource("1_3fgru")]
+
+[node name="walls" parent="Node" index="0"]
+layers = 8
+
+[node name="clocktop" parent="Node" index="1"]
+layers = 8
+
+[node name="cuboid" parent="Node" index="2"]
+layers = 8
+
+[node name="cylinder" parent="Node/tree_base" index="0"]
+layers = 8
+
+[node name="cylinder_selection" parent="Node/tree_base/bone" index="0"]
+layers = 8
+
+[node name="cylinder_selection2" parent="Node/tree_base/bone/bone2" index="0"]
+layers = 8
+
+[node name="cylinder_selection3" parent="Node/tree_base/bone/bone2/bone3" index="0"]
+layers = 8
+
+[node name="cylinder2" parent="Node/tree_base4" index="0"]
+layers = 8
+
+[node name="cylinder_selection4" parent="Node/tree_base4/bone12" index="0"]
+layers = 8
+
+[node name="cylinder_selection5" parent="Node/tree_base4/bone12/bone13" index="0"]
+layers = 8
+
+[node name="cylinder_selection6" parent="Node/tree_base4/bone12/bone13/bone14" index="0"]
+layers = 8
+
+[node name="cylinder3" parent="Node/tree_base2" index="0"]
+layers = 8
+
+[node name="cylinder_selection7" parent="Node/tree_base2/bone4" index="0"]
+layers = 8
+
+[node name="cylinder_selection8" parent="Node/tree_base2/bone4/bone5" index="0"]
+layers = 8
+
+[node name="cylinder_selection9" parent="Node/tree_base2/bone4/bone5/bone6" index="0"]
+layers = 8
+
+[node name="cylinder4" parent="Node/tree_base3" index="0"]
+layers = 8
+
+[node name="cylinder_selection10" parent="Node/tree_base3/bone7" index="0"]
+layers = 8
+
+[node name="cylinder_selection11" parent="Node/tree_base3/bone7/bone8" index="0"]
+layers = 8
+
+[node name="cylinder_selection12" parent="Node/tree_base3/bone7/bone8/bone9" index="0"]
+layers = 8
+
+[node name="cylinder5" parent="Node/tree_base6" index="0"]
+layers = 8
+
+[node name="cylinder_selection13" parent="Node/tree_base6/bone18" index="0"]
+layers = 8
+
+[node name="cylinder_selection14" parent="Node/tree_base6/bone18/bone19" index="0"]
+layers = 8
+
+[node name="cylinder_selection15" parent="Node/tree_base6/bone18/bone19/bone20" index="0"]
+layers = 8
+
+[node name="cylinder6" parent="Node/tree_base7" index="0"]
+layers = 8
+
+[node name="cylinder_selection16" parent="Node/tree_base7/bone21" index="0"]
+layers = 8
+
+[node name="cylinder_selection17" parent="Node/tree_base7/bone21/bone22" index="0"]
+layers = 8
+
+[node name="cylinder_selection18" parent="Node/tree_base7/bone21/bone22/bone23" index="0"]
+layers = 8
+
+[node name="cylinder7" parent="Node/tree_base5" index="0"]
+layers = 8
+
+[node name="cylinder_selection19" parent="Node/tree_base5/bone15" index="0"]
+layers = 8
+
+[node name="cylinder_selection20" parent="Node/tree_base5/bone15/bone16" index="0"]
+layers = 8
+
+[node name="cylinder_selection21" parent="Node/tree_base5/bone15/bone16/bone17" index="0"]
+layers = 8
+
+[node name="house" parent="Node/bone11" index="0"]
+layers = 8
+
+[node name="cuboid2" parent="Node/bone11/bone10" index="0"]
+layers = 8
+
+[node name="cylinder8" parent="Node/bone11/bone10" index="1"]
+layers = 8
