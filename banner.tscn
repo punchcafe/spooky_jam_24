@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://b43djqfu5mhmv"]
+
+[ext_resource type="PackedScene" uid="uid://cbmrof2ushk2q" path="res://Models/spookyjam_clockface.gltf" id="1_b6st1"]
+
+[sub_resource type="Environment" id="Environment_slqlc"]
+background_mode = 1
+ambient_light_source = 1
+reflected_light_source = 1
+
+[node name="Banner" type="Node3D"]
+
+[node name="blockbench_export" parent="." instance=ExtResource("1_b6st1")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0195639, 0.999809, 0, -0.999809, 0.0195639, 0, 10.8981, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_slqlc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+light_color = Color(0.576471, 0.0705882, 1, 1)
+light_energy = 4.385
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.994462, 0.105101, 0, -0.105101, -0.994462, 0, 0, 0)
+light_color = Color(0.458824, 1, 0.733333, 1)
+light_energy = 1.462
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.525433, 0)
+light_energy = 4.308

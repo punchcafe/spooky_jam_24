@@ -38,8 +38,10 @@ script = ExtResource("1_jd3jk")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 40, -100)
 cull_mask = 10
 environment = SubResource("Environment_m372k")
+projection = 2
 current = true
-fov = 33.0
+fov = 37.9
+size = 0.06
 far = 500.0
 
 [node name="Tower" type="MeshInstance3D" parent="."]
@@ -78,6 +80,7 @@ light_cull_mask = 4294967291
 
 [node name="ClockFaceMesh" parent="." instance=ExtResource("1_52en5")]
 transform = Transform3D(-1.22, -1.06656e-07, 4.66207e-15, 0, -5.33279e-08, -1.22, 1.06656e-07, -1.22, 5.33279e-08, 0, 48.5, -10.0011)
+visible = false
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 48.5, -7.5)
@@ -85,6 +88,7 @@ light_energy = 3.778
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 48.5, -12.4423)
+visible = false
 layers = 2
 light_energy = 13.432
 light_indirect_energy = 0.0

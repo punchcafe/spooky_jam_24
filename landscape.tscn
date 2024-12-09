@@ -16,11 +16,20 @@ layers = 8
 [node name="cylinder" parent="Node/tree_base" index="0"]
 layers = 8
 
+[node name="bone" parent="Node/tree_base" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 0, 0)
+
 [node name="cylinder_selection" parent="Node/tree_base/bone" index="0"]
 layers = 8
 
+[node name="bone2" parent="Node/tree_base/bone" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 17.0625, 0)
+
 [node name="cylinder_selection2" parent="Node/tree_base/bone/bone2" index="0"]
 layers = 8
+
+[node name="bone3" parent="Node/tree_base/bone/bone2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 4.87548, -0.109627)
 
 [node name="cylinder_selection3" parent="Node/tree_base/bone/bone2/bone3" index="0"]
 layers = 8
@@ -28,11 +37,20 @@ layers = 8
 [node name="cylinder2" parent="Node/tree_base4" index="0"]
 layers = 8
 
+[node name="bone12" parent="Node/tree_base4" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 0, 0)
+
 [node name="cylinder_selection4" parent="Node/tree_base4/bone12" index="0"]
 layers = 8
 
+[node name="bone13" parent="Node/tree_base4/bone12" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 17.0625, 0)
+
 [node name="cylinder_selection5" parent="Node/tree_base4/bone12/bone13" index="0"]
 layers = 8
+
+[node name="bone14" parent="Node/tree_base4/bone12/bone13" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 4.87548, -0.109627)
 
 [node name="cylinder_selection6" parent="Node/tree_base4/bone12/bone13/bone14" index="0"]
 layers = 8
@@ -40,11 +58,20 @@ layers = 8
 [node name="cylinder3" parent="Node/tree_base2" index="0"]
 layers = 8
 
+[node name="bone4" parent="Node/tree_base2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 0, 0)
+
 [node name="cylinder_selection7" parent="Node/tree_base2/bone4" index="0"]
 layers = 8
 
+[node name="bone5" parent="Node/tree_base2/bone4" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 29.5181, 0)
+
 [node name="cylinder_selection8" parent="Node/tree_base2/bone4/bone5" index="0"]
 layers = 8
+
+[node name="bone6" parent="Node/tree_base2/bone4/bone5" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 8.43458, -0.109627)
 
 [node name="cylinder_selection9" parent="Node/tree_base2/bone4/bone5/bone6" index="0"]
 layers = 8
@@ -52,11 +79,20 @@ layers = 8
 [node name="cylinder4" parent="Node/tree_base3" index="0"]
 layers = 8
 
+[node name="bone7" parent="Node/tree_base3" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 0, 0)
+
 [node name="cylinder_selection10" parent="Node/tree_base3/bone7" index="0"]
 layers = 8
 
+[node name="bone8" parent="Node/tree_base3/bone7" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 29.5181, 0)
+
 [node name="cylinder_selection11" parent="Node/tree_base3/bone7/bone8" index="0"]
 layers = 8
+
+[node name="bone9" parent="Node/tree_base3/bone7/bone8" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 8.43458, -0.109627)
 
 [node name="cylinder_selection12" parent="Node/tree_base3/bone7/bone8/bone9" index="0"]
 layers = 8
@@ -64,11 +100,20 @@ layers = 8
 [node name="cylinder5" parent="Node/tree_base6" index="0"]
 layers = 8
 
+[node name="bone18" parent="Node/tree_base6" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 0, 0)
+
 [node name="cylinder_selection13" parent="Node/tree_base6/bone18" index="0"]
 layers = 8
 
+[node name="bone19" parent="Node/tree_base6/bone18" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 22.729, 0)
+
 [node name="cylinder_selection14" parent="Node/tree_base6/bone18/bone19" index="0"]
 layers = 8
+
+[node name="bone20" parent="Node/tree_base6/bone18/bone19" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 6.49462, -0.109627)
 
 [node name="cylinder_selection15" parent="Node/tree_base6/bone18/bone19/bone20" index="0"]
 layers = 8
@@ -76,11 +121,20 @@ layers = 8
 [node name="cylinder6" parent="Node/tree_base7" index="0"]
 layers = 8
 
+[node name="bone21" parent="Node/tree_base7" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 0, 0)
+
 [node name="cylinder_selection16" parent="Node/tree_base7/bone21" index="0"]
 layers = 8
 
+[node name="bone22" parent="Node/tree_base7/bone21" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 29.5181, 0)
+
 [node name="cylinder_selection17" parent="Node/tree_base7/bone21/bone22" index="0"]
 layers = 8
+
+[node name="bone23" parent="Node/tree_base7/bone21/bone22" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 8.43458, -0.109627)
 
 [node name="cylinder_selection18" parent="Node/tree_base7/bone21/bone22/bone23" index="0"]
 layers = 8
@@ -88,11 +142,20 @@ layers = 8
 [node name="cylinder7" parent="Node/tree_base5" index="0"]
 layers = 8
 
+[node name="bone15" parent="Node/tree_base5" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 0, 0)
+
 [node name="cylinder_selection19" parent="Node/tree_base5/bone15" index="0"]
 layers = 8
 
+[node name="bone16" parent="Node/tree_base5/bone15" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 23.9097, 0)
+
 [node name="cylinder_selection20" parent="Node/tree_base5/bone15/bone16" index="0"]
 layers = 8
+
+[node name="bone17" parent="Node/tree_base5/bone15/bone16" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999962, 0.00872654, 0, -0.00872654, 0.999962, 0, 6.83201, -0.109627)
 
 [node name="cylinder_selection21" parent="Node/tree_base5/bone15/bone16/bone17" index="0"]
 layers = 8

@@ -33,6 +33,7 @@ shader_parameter/pixel_strength = -4.0
 [node name="OutsideScene" parent="." instance=ExtResource("2_32paw")]
 
 [node name="StartingMenu" type="Control" parent="."]
+visible = false
 clip_contents = true
 layout_mode = 3
 anchors_preset = 15
