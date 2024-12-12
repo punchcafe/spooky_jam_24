@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwn805ots7edj"]
 
-[ext_resource type="PackedScene" uid="uid://cglqdhomm8sd3" path="res://Models/spookyjam_titlescreen.gltf" id="1_3fgru"]
+[ext_resource type="PackedScene" uid="uid://cglqdhomm8sd3" path="res://assets/spookyjam_titlescreen.gltf" id="1_qxiri"]
 
-[node name="blockbench_export" instance=ExtResource("1_3fgru")]
+[node name="blockbench_export" instance=ExtResource("1_qxiri")]
 
 [node name="walls" parent="Node" index="0"]
 layers = 8

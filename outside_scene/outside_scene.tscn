@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://ygqvjjnyur1d"]
 
-[ext_resource type="PackedScene" uid="uid://bml0kafwr0lc0" path="res://clock_face.tscn" id="1_52en5"]
-[ext_resource type="Script" path="res://outside_scene.gd" id="1_jd3jk"]
-[ext_resource type="PackedScene" uid="uid://bwn805ots7edj" path="res://landscape.tscn" id="3_qykc6"]
+[ext_resource type="PackedScene" uid="uid://bml0kafwr0lc0" path="res://outside_scene/clock_face.tscn" id="1_52en5"]
+[ext_resource type="Script" path="res://outside_scene/outside_scene.gd" id="1_jd3jk"]
+[ext_resource type="PackedScene" uid="uid://bwn805ots7edj" path="res://outside_scene/landscape.tscn" id="3_qykc6"]
 
 [sub_resource type="Environment" id="Environment_m372k"]
 background_mode = 1

@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://d0qe6hxvf1nif"]
 
-[ext_resource type="Script" path="res://game_end_zone.gd" id="1_pa84y"]
-[ext_resource type="PackedScene" uid="uid://bml0kafwr0lc0" path="res://clock_face.tscn" id="2_yaaq5"]
-[ext_resource type="PackedScene" uid="uid://ygqvjjnyur1d" path="res://outside_scene.tscn" id="3_trfde"]
+[ext_resource type="Script" path="res://level/game_end_zone.gd" id="1_pa84y"]
+[ext_resource type="PackedScene" uid="uid://bml0kafwr0lc0" path="res://outside_scene/clock_face.tscn" id="2_yaaq5"]
+[ext_resource type="PackedScene" uid="uid://ygqvjjnyur1d" path="res://outside_scene/outside_scene.tscn" id="3_trfde"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_07nbl"]
 emission_enabled = true

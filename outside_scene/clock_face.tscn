@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://bml0kafwr0lc0"]
 
-[ext_resource type="PackedScene" uid="uid://cbmrof2ushk2q" path="res://Models/spookyjam_clockface.gltf" id="1_owr26"]
+[ext_resource type="PackedScene" uid="uid://cbmrof2ushk2q" path="res://assets/spookyjam_clockface.gltf" id="1_fn40n"]
 
-[node name="blockbench_export" instance=ExtResource("1_owr26")]
+[node name="blockbench_export" instance=ExtResource("1_fn40n")]
 
 [node name="bigarrow" parent="Node/Clockface" index="0"]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -8.32667e-17, 0.25, 0.0204281)

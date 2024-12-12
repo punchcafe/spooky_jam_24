@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dnw23qfahu3rt"]
 
-[ext_resource type="Script" path="res://torch.gd" id="1_2w3r2"]
-[ext_resource type="PackedScene" uid="uid://c0xny1fjdt8u7" path="res://Models/spookyjam_torch.gltf" id="1_cbe61"]
+[ext_resource type="Script" path="res://level/torch.gd" id="1_2w3r2"]
+[ext_resource type="PackedScene" uid="uid://c0xny1fjdt8u7" path="res://assets/spookyjam_torch.gltf" id="1_cbe61"]
 
 [node name="TorchAnchor" type="Node3D"]
 

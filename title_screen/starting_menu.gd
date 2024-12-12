@@ -40,7 +40,7 @@ func _on_start_button_pressed() -> void:
 		destination_transform.origin, 
 		tween_time
 	)
-	tween.tween_callback(func(): get_tree().change_scene_to_file("res://root_level.tscn") )
+	tween.tween_callback(func(): get_tree().change_scene_to_file("res://level/root_level.tscn") )
 
 
 func _on_credits_pressed() -> void:

@@ -1,9 +1,9 @@
 [gd_scene load_steps=22 format=3 uid="uid://biaidqh46uhsm"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_8idxh"]
-[ext_resource type="Texture2D" uid="uid://cfbbfi26ly64t" path="res://pumpkin_thief.png" id="2_6o3cr"]
-[ext_resource type="Shader" path="res://crt.gdshader" id="2_kvp8e"]
-[ext_resource type="Script" path="res://sound_fx_player.gd" id="4_runl5"]
+[ext_resource type="Script" path="res://level/player/player.gd" id="1_8idxh"]
+[ext_resource type="Texture2D" uid="uid://cfbbfi26ly64t" path="res://assets/pumpkin_thief.png" id="2_6o3cr"]
+[ext_resource type="Shader" path="res://shaders/crt.gdshader" id="2_kvp8e"]
+[ext_resource type="Script" path="res://level/player/sound_fx_player.gd" id="4_runl5"]
 [ext_resource type="AudioStream" uid="uid://m7c5nngpe7hw" path="res://sounds/SJ_Jump.wav" id="5_2e1wm"]
 [ext_resource type="AudioStream" uid="uid://1hgnilsdaxf7" path="res://sounds/SJ_Land.wav" id="6_ljxn6"]
 [ext_resource type="AudioStream" uid="uid://54rsx00e18ad" path="res://sounds/SJ_Death_NoJingle.wav" id="7_myljh"]

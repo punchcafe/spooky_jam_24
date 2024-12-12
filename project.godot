@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Spooky Jam 24"
-run/main_scene="res://title_screen.tscn"
+run/main_scene="res://title_screen/title_screen.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://game-icon.png"
+config/icon="res://assets/game-icon.png"
 
 [display]
 

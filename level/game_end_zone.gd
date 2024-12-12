@@ -52,5 +52,5 @@ func _trigger_game_restart():
 	
 
 func _restart_game():
-	get_tree().change_scene_to_file("res://title_screen.tscn")
+	get_tree().change_scene_to_file("res://title_screen/title_screen.tscn")
 	

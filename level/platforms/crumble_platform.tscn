@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6wxrdseugf7c"]
 
-[ext_resource type="Script" path="res://platforms/crumble_platform.gd" id="1_e5yxt"]
-[ext_resource type="PackedScene" uid="uid://cox4b8twlvykr" path="res://Models/spookyjam_platform_wide_crumble_animated.gltf" id="2_r023p"]
+[ext_resource type="Script" path="res://level/platforms/crumble_platform.gd" id="1_e5yxt"]
+[ext_resource type="PackedScene" uid="uid://dkk32greb6bmo" path="res://assets/spookyjam_platform_wide_crumble_animated.gltf" id="2_r023p"]
 [ext_resource type="AudioStream" uid="uid://8qf3jicc1bmb" path="res://sounds/SJ_PlatformFall.wav" id="3_4vaj1"]
 
 [node name="Node3D" type="Node3D"]
