@@ -14,6 +14,7 @@ config/name="Spooky Jam 24"
 run/main_scene="res://title_screen/title_screen.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://assets/game-icon.png"
+config/windows_native_icon="res://game_icon.ico"
 
 [display]
 
